@@ -13,7 +13,20 @@ namespace Converter
     public partial class MainForm : Form
     {
         Dictionary<string, double> measure;
-        
+
+        //  современные меры времени
+        const double sec = 1;
+        const double min = sec * 60;
+        const double hour = min * 60;
+        const double day = hour * 24;
+        const double week = day * 7;
+        const double year = hour * 8760;
+        const double month = year / 12;
+        const double century = year * 100;
+        const double msec = sec / 1000;
+        const double mksec = msec / 1000;
+        const double nsec = mksec / 1000;
+
         //  современные меры длины
         const double mkmeter = 1;
         const double mmeter = mkmeter * 1000;
@@ -35,7 +48,10 @@ namespace Converter
         const double pound = ounce * 16;
         const double kgram = gram * 1000;
         const double ston = ounce * 224;
-        const double tonn = kgram * 1000;
+        const double ton = kgram * 1000;
+        const double american_ton = pound * 2000;
+        const double british_ton = pound * 2240;
+
         
         public MainForm()
         {
@@ -80,6 +96,47 @@ namespace Converter
         {
             switch (cbActualMeasure.Text)
             {
+                case "Время":
+                    measure.Clear();
+                    measure.Add("наносекунда", nsec);
+                    measure.Add("микросекунда", mksec);
+                    measure.Add("миллисекунда", msec);
+                    measure.Add("секунда", sec);
+                    measure.Add("минута", min);
+                    measure.Add("час", hour);
+                    measure.Add("сутки", day);
+                    measure.Add("неделя", week);
+                    measure.Add("месяц", month);
+                    measure.Add("год", year);
+                    measure.Add("век", century);
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("наносекунда");
+                    cbActualFrom.Items.Add("микросекунда");
+                    cbActualFrom.Items.Add("миллисекунда");
+                    cbActualFrom.Items.Add("секунда");
+                    cbActualFrom.Items.Add("минута");
+                    cbActualFrom.Items.Add("час");
+                    cbActualFrom.Items.Add("сутки");
+                    cbActualFrom.Items.Add("неделя");
+                    cbActualFrom.Items.Add("месяц");
+                    cbActualFrom.Items.Add("год");
+                    cbActualFrom.Items.Add("век");
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("наносекунда");
+                    cbActualTo.Items.Add("микросекунда");
+                    cbActualTo.Items.Add("миллисекунда");
+                    cbActualTo.Items.Add("секунда");
+                    cbActualTo.Items.Add("минута");
+                    cbActualTo.Items.Add("час");
+                    cbActualTo.Items.Add("сутки");
+                    cbActualTo.Items.Add("неделя");
+                    cbActualTo.Items.Add("месяц");
+                    cbActualTo.Items.Add("год");
+                    cbActualTo.Items.Add("век");
+                    cbActualFrom.Text = "час";
+                    cbActualTo.Text = "секунда";
+                    break;
+
                 case "Длина":
                     measure.Clear();
                     measure.Add("микрометр", mkmeter);
@@ -130,7 +187,9 @@ namespace Converter
                     measure.Add("фунт", pound);
                     measure.Add("килограмм", kgram);
                     measure.Add("стон", ston);
-                    measure.Add("тонна", tonn);
+                    measure.Add("тонна", ton);
+                    measure.Add("американская тонна", american_ton);
+                    measure.Add("английская тонна", british_ton);
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("микрограмм");
                     cbActualFrom.Items.Add("миллиграмм");
@@ -140,6 +199,8 @@ namespace Converter
                     cbActualFrom.Items.Add("килограмм");
                     cbActualFrom.Items.Add("стон");
                     cbActualFrom.Items.Add("тонна");
+                    cbActualFrom.Items.Add("американская тонна");
+                    cbActualFrom.Items.Add("английская тонна");
                     cbActualTo.Items.Clear();
                     cbActualTo.Items.Add("микрограмм");
                     cbActualTo.Items.Add("миллиграмм");
@@ -149,6 +210,8 @@ namespace Converter
                     cbActualTo.Items.Add("килограмм");
                     cbActualTo.Items.Add("стон");
                     cbActualTo.Items.Add("тонна");
+                    cbActualTo.Items.Add("американская тонна");
+                    cbActualTo.Items.Add("английская тонна");
                     cbActualFrom.Text = "килограмм";
                     cbActualTo.Text = "грамм";
                     break;
