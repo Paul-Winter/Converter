@@ -172,6 +172,7 @@
             this.btnActualConvert.TabIndex = 0;
             this.btnActualConvert.Text = "convert";
             this.btnActualConvert.UseVisualStyleBackColor = true;
+            this.btnActualConvert.Click += new System.EventHandler(this.btnActualConvert_Click);
             // 
             // btnActualChange
             // 
