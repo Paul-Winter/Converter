@@ -14,6 +14,8 @@ namespace Converter
     {
         Dictionary<string, double> measure;
 
+        #region современные меры
+
         //  современные меры времени
         const double sec = 1;
         const double min = sec * 60;
@@ -26,6 +28,13 @@ namespace Converter
         const double msec = sec / 1000;
         const double mksec = msec / 1000;
         const double nsec = mksec / 1000;
+
+        //  современные меры давления
+        const double pascal = 1;
+        const double atm = pascal * 101325;
+        const double bar = pascal * 100000;
+        const double torr = atm / 760;
+        const double poundStonSqInch = torr * 51.7149;
 
         //  современные меры длины
         const double mkmeter = 1;
@@ -52,14 +61,16 @@ namespace Converter
         const double american_ton = pound * 2000;
         const double british_ton = pound * 2240;
 
-        
+
+        #endregion
+
         public MainForm()
         {
             InitializeComponent();
 
             measure = new Dictionary<string, double>();
 
-            #region начальные значения
+            #region начальная инициализация мер
 
             measure.Add("микрометр", mkmeter);
             measure.Add("миллиметр", mmeter);
@@ -72,6 +83,30 @@ namespace Converter
             measure.Add("километр", kmeter);
             measure.Add("миля", mile);
             measure.Add("морская миля", nautical_mile);
+
+            #endregion
+
+            #region установка стилей списков
+
+            //  стили списков современных мер
+            cbActualMeasure.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbActualFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbActualTo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //  стили списков старорусских мер
+            cbRussianMeasure.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRussianFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbRussianTo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //  стили списков имперских мер
+            cbImperialMeasure.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbImperialFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbImperialTo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            //  стили списков японских мер
+            cbJapaneseMeasure.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbJapaneseFrom.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbJapaneseTo.DropDownStyle = ComboBoxStyle.DropDownList;
 
             #endregion
         }
@@ -122,6 +157,7 @@ namespace Converter
                     measure.Add("месяц", month);
                     measure.Add("год", year);
                     measure.Add("век", century);
+
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("наносекунда");
                     cbActualFrom.Items.Add("микросекунда");
@@ -134,6 +170,7 @@ namespace Converter
                     cbActualFrom.Items.Add("месяц");
                     cbActualFrom.Items.Add("год");
                     cbActualFrom.Items.Add("век");
+
                     cbActualTo.Items.Clear();
                     cbActualTo.Items.Add("наносекунда");
                     cbActualTo.Items.Add("микросекунда");
@@ -146,8 +183,39 @@ namespace Converter
                     cbActualTo.Items.Add("месяц");
                     cbActualTo.Items.Add("год");
                     cbActualTo.Items.Add("век");
+
                     cbActualFrom.Text = "час";
                     cbActualTo.Text = "секунда";
+                    break;
+
+                #endregion
+
+                #region Давление
+
+                case "Давление":
+                    measure.Clear();
+                    measure.Add("Паскаль", pascal);
+                    measure.Add("бар", bar);
+                    measure.Add("атмосфера", atm);
+                    measure.Add("торр", torr);
+                    measure.Add("фунт-сила на квадратный дюйм", poundStonSqInch);
+
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("Паскаль");
+                    cbActualFrom.Items.Add("бар");
+                    cbActualFrom.Items.Add("атмосфера");
+                    cbActualFrom.Items.Add("торр");
+                    cbActualFrom.Items.Add("фунт-сила на квадратный дюйм");
+
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("Паскаль");
+                    cbActualTo.Items.Add("бар");
+                    cbActualTo.Items.Add("атмосфера");
+                    cbActualTo.Items.Add("торр");
+                    cbActualTo.Items.Add("фунт-сила на квадратный дюйм");
+
+                    cbActualFrom.Text = "бар";
+                    cbActualTo.Text = "Паскаль";
                     break;
 
                 #endregion

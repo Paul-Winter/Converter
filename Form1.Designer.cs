@@ -31,17 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tpActual = new System.Windows.Forms.TabPage();
-            this.tpRussian = new System.Windows.Forms.TabPage();
-            this.tpImperial = new System.Windows.Forms.TabPage();
-            this.tpJapanese = new System.Windows.Forms.TabPage();
-            this.tpAboutProgram = new System.Windows.Forms.TabPage();
-            this.btnActualConvert = new System.Windows.Forms.Button();
-            this.btnActualSwap = new System.Windows.Forms.Button();
-            this.cbActualFrom = new System.Windows.Forms.ComboBox();
-            this.cbActualTo = new System.Windows.Forms.ComboBox();
-            this.tbActualFrom = new System.Windows.Forms.TextBox();
-            this.tbActualTo = new System.Windows.Forms.TextBox();
             this.cbActualMeasure = new System.Windows.Forms.ComboBox();
+            this.tbActualTo = new System.Windows.Forms.TextBox();
+            this.tbActualFrom = new System.Windows.Forms.TextBox();
+            this.cbActualTo = new System.Windows.Forms.ComboBox();
+            this.cbActualFrom = new System.Windows.Forms.ComboBox();
+            this.btnActualSwap = new System.Windows.Forms.Button();
+            this.btnActualConvert = new System.Windows.Forms.Button();
+            this.tpRussian = new System.Windows.Forms.TabPage();
             this.cbRussianMeasure = new System.Windows.Forms.ComboBox();
             this.tbRussianTo = new System.Windows.Forms.TextBox();
             this.tbRussianFrom = new System.Windows.Forms.TextBox();
@@ -49,6 +46,7 @@
             this.cbRussianFrom = new System.Windows.Forms.ComboBox();
             this.btnRussianSwap = new System.Windows.Forms.Button();
             this.btnRussianConvert = new System.Windows.Forms.Button();
+            this.tpImperial = new System.Windows.Forms.TabPage();
             this.cbImperialMeasure = new System.Windows.Forms.ComboBox();
             this.tbImperialTo = new System.Windows.Forms.TextBox();
             this.tbImperialFrom = new System.Windows.Forms.TextBox();
@@ -56,6 +54,7 @@
             this.cbImperialFrom = new System.Windows.Forms.ComboBox();
             this.btnImperialSwap = new System.Windows.Forms.Button();
             this.btnImperialConvert = new System.Windows.Forms.Button();
+            this.tpJapanese = new System.Windows.Forms.TabPage();
             this.cbJapaneseMeasure = new System.Windows.Forms.ComboBox();
             this.tbJapaneseTo = new System.Windows.Forms.TextBox();
             this.tbJapaneseFrom = new System.Windows.Forms.TextBox();
@@ -63,8 +62,9 @@
             this.cbJapaneseFrom = new System.Windows.Forms.ComboBox();
             this.btnJapaneseSwap = new System.Windows.Forms.Button();
             this.btnJapaneseConvert = new System.Windows.Forms.Button();
-            this.tbPrefix = new System.Windows.Forms.TextBox();
+            this.tpAboutProgram = new System.Windows.Forms.TabPage();
             this.tbAboutProgram = new System.Windows.Forms.TextBox();
+            this.tbPrefix = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tpActual.SuspendLayout();
             this.tpRussian.SuspendLayout();
@@ -104,85 +104,67 @@
             this.tpActual.Text = "Современные";
             this.tpActual.UseVisualStyleBackColor = true;
             // 
-            // tpRussian
+            // cbActualMeasure
             // 
-            this.tpRussian.Controls.Add(this.cbRussianMeasure);
-            this.tpRussian.Controls.Add(this.tbRussianTo);
-            this.tpRussian.Controls.Add(this.tbRussianFrom);
-            this.tpRussian.Controls.Add(this.cbRussianTo);
-            this.tpRussian.Controls.Add(this.cbRussianFrom);
-            this.tpRussian.Controls.Add(this.btnRussianSwap);
-            this.tpRussian.Controls.Add(this.btnRussianConvert);
-            this.tpRussian.Location = new System.Drawing.Point(4, 22);
-            this.tpRussian.Name = "tpRussian";
-            this.tpRussian.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRussian.Size = new System.Drawing.Size(376, 336);
-            this.tpRussian.TabIndex = 1;
-            this.tpRussian.Text = "Старорусские";
-            this.tpRussian.UseVisualStyleBackColor = true;
+            this.cbActualMeasure.FormattingEnabled = true;
+            this.cbActualMeasure.Items.AddRange(new object[] {
+            "Время",
+            "Давление",
+            "Длина",
+            "Информация",
+            "Масса",
+            "Объём",
+            "Площадь",
+            "Скорость",
+            "Температура",
+            "Энергия"});
+            this.cbActualMeasure.Location = new System.Drawing.Point(125, 73);
+            this.cbActualMeasure.MaxDropDownItems = 12;
+            this.cbActualMeasure.Name = "cbActualMeasure";
+            this.cbActualMeasure.Size = new System.Drawing.Size(121, 21);
+            this.cbActualMeasure.TabIndex = 6;
+            this.cbActualMeasure.Text = "Длина";
+            this.cbActualMeasure.SelectedIndexChanged += new System.EventHandler(this.cbActualMeasure_SelectedIndexChanged);
             // 
-            // tpImperial
+            // tbActualTo
             // 
-            this.tpImperial.Controls.Add(this.cbImperialMeasure);
-            this.tpImperial.Controls.Add(this.tbImperialTo);
-            this.tpImperial.Controls.Add(this.tbImperialFrom);
-            this.tpImperial.Controls.Add(this.cbImperialTo);
-            this.tpImperial.Controls.Add(this.cbImperialFrom);
-            this.tpImperial.Controls.Add(this.btnImperialSwap);
-            this.tpImperial.Controls.Add(this.btnImperialConvert);
-            this.tpImperial.Location = new System.Drawing.Point(4, 22);
-            this.tpImperial.Name = "tpImperial";
-            this.tpImperial.Size = new System.Drawing.Size(376, 336);
-            this.tpImperial.TabIndex = 2;
-            this.tpImperial.Text = "Имперские";
-            this.tpImperial.UseVisualStyleBackColor = true;
+            this.tbActualTo.Location = new System.Drawing.Point(248, 200);
+            this.tbActualTo.Name = "tbActualTo";
+            this.tbActualTo.ReadOnly = true;
+            this.tbActualTo.ShortcutsEnabled = false;
+            this.tbActualTo.Size = new System.Drawing.Size(100, 20);
+            this.tbActualTo.TabIndex = 5;
+            this.tbActualTo.TabStop = false;
             // 
-            // tpJapanese
+            // tbActualFrom
             // 
-            this.tpJapanese.Controls.Add(this.cbJapaneseMeasure);
-            this.tpJapanese.Controls.Add(this.tbJapaneseTo);
-            this.tpJapanese.Controls.Add(this.tbJapaneseFrom);
-            this.tpJapanese.Controls.Add(this.cbJapaneseTo);
-            this.tpJapanese.Controls.Add(this.cbJapaneseFrom);
-            this.tpJapanese.Controls.Add(this.btnJapaneseSwap);
-            this.tpJapanese.Controls.Add(this.btnJapaneseConvert);
-            this.tpJapanese.Location = new System.Drawing.Point(4, 22);
-            this.tpJapanese.Name = "tpJapanese";
-            this.tpJapanese.Size = new System.Drawing.Size(376, 336);
-            this.tpJapanese.TabIndex = 3;
-            this.tpJapanese.Text = "Японские";
-            this.tpJapanese.UseVisualStyleBackColor = true;
+            this.tbActualFrom.Location = new System.Drawing.Point(28, 203);
+            this.tbActualFrom.Name = "tbActualFrom";
+            this.tbActualFrom.Size = new System.Drawing.Size(100, 20);
+            this.tbActualFrom.TabIndex = 4;
+            this.tbActualFrom.Text = "1";
+            this.tbActualFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tpAboutProgram
+            // cbActualTo
             // 
-            this.tpAboutProgram.Controls.Add(this.tbAboutProgram);
-            this.tpAboutProgram.Controls.Add(this.tbPrefix);
-            this.tpAboutProgram.Location = new System.Drawing.Point(4, 22);
-            this.tpAboutProgram.Name = "tpAboutProgram";
-            this.tpAboutProgram.Size = new System.Drawing.Size(376, 336);
-            this.tpAboutProgram.TabIndex = 4;
-            this.tpAboutProgram.Text = "О программе";
-            this.tpAboutProgram.UseVisualStyleBackColor = true;
-            // 
-            // btnActualConvert
-            // 
-            this.btnActualConvert.Location = new System.Drawing.Point(150, 200);
-            this.btnActualConvert.Name = "btnActualConvert";
-            this.btnActualConvert.Size = new System.Drawing.Size(75, 23);
-            this.btnActualConvert.TabIndex = 0;
-            this.btnActualConvert.Text = "convert";
-            this.btnActualConvert.UseVisualStyleBackColor = true;
-            this.btnActualConvert.Click += new System.EventHandler(this.btnActualConvert_Click);
-            // 
-            // btnActualSwap
-            // 
-            this.btnActualSwap.Location = new System.Drawing.Point(150, 130);
-            this.btnActualSwap.Name = "btnActualSwap";
-            this.btnActualSwap.Size = new System.Drawing.Size(75, 23);
-            this.btnActualSwap.TabIndex = 1;
-            this.btnActualSwap.Text = "swap";
-            this.btnActualSwap.UseVisualStyleBackColor = true;
-            this.btnActualSwap.Click += new System.EventHandler(this.btnActualSwap_Click);
+            this.cbActualTo.FormattingEnabled = true;
+            this.cbActualTo.Items.AddRange(new object[] {
+            "микрометр",
+            "миллиметр",
+            "сантиметр",
+            "дюйм",
+            "фут",
+            "ярд",
+            "метр",
+            "километр",
+            "миля",
+            "морская миля"});
+            this.cbActualTo.Location = new System.Drawing.Point(248, 130);
+            this.cbActualTo.MaxDropDownItems = 12;
+            this.cbActualTo.Name = "cbActualTo";
+            this.cbActualTo.Size = new System.Drawing.Size(121, 21);
+            this.cbActualTo.TabIndex = 3;
+            this.cbActualTo.Text = "миллиметр";
             // 
             // cbActualFrom
             // 
@@ -200,70 +182,48 @@
             "миля",
             "морская миля"});
             this.cbActualFrom.Location = new System.Drawing.Point(7, 130);
+            this.cbActualFrom.MaxDropDownItems = 12;
             this.cbActualFrom.Name = "cbActualFrom";
             this.cbActualFrom.Size = new System.Drawing.Size(121, 21);
             this.cbActualFrom.TabIndex = 2;
             this.cbActualFrom.Text = "метр";
             // 
-            // cbActualTo
+            // btnActualSwap
             // 
-            this.cbActualTo.FormattingEnabled = true;
-            this.cbActualTo.Items.AddRange(new object[] {
-            "микрометр",
-            "миллиметр",
-            "сантиметр",
-            "дюйм",
-            "фут",
-            "ярд",
-            "метр",
-            "километр",
-            "миля",
-            "морская миля"});
-            this.cbActualTo.Location = new System.Drawing.Point(248, 130);
-            this.cbActualTo.Name = "cbActualTo";
-            this.cbActualTo.Size = new System.Drawing.Size(121, 21);
-            this.cbActualTo.TabIndex = 3;
-            this.cbActualTo.Text = "миллиметр";
+            this.btnActualSwap.Location = new System.Drawing.Point(150, 130);
+            this.btnActualSwap.Name = "btnActualSwap";
+            this.btnActualSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnActualSwap.TabIndex = 1;
+            this.btnActualSwap.Text = "swap";
+            this.btnActualSwap.UseVisualStyleBackColor = true;
+            this.btnActualSwap.Click += new System.EventHandler(this.btnActualSwap_Click);
             // 
-            // tbActualFrom
+            // btnActualConvert
             // 
-            this.tbActualFrom.Location = new System.Drawing.Point(28, 203);
-            this.tbActualFrom.Name = "tbActualFrom";
-            this.tbActualFrom.Size = new System.Drawing.Size(100, 20);
-            this.tbActualFrom.TabIndex = 4;
-            this.tbActualFrom.Text = "1";
-            this.tbActualFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnActualConvert.Location = new System.Drawing.Point(150, 200);
+            this.btnActualConvert.Name = "btnActualConvert";
+            this.btnActualConvert.Size = new System.Drawing.Size(75, 23);
+            this.btnActualConvert.TabIndex = 0;
+            this.btnActualConvert.Text = "convert";
+            this.btnActualConvert.UseVisualStyleBackColor = true;
+            this.btnActualConvert.Click += new System.EventHandler(this.btnActualConvert_Click);
             // 
-            // tbActualTo
+            // tpRussian
             // 
-            this.tbActualTo.Location = new System.Drawing.Point(248, 200);
-            this.tbActualTo.Name = "tbActualTo";
-            this.tbActualTo.ReadOnly = true;
-            this.tbActualTo.ShortcutsEnabled = false;
-            this.tbActualTo.Size = new System.Drawing.Size(100, 20);
-            this.tbActualTo.TabIndex = 5;
-            this.tbActualTo.TabStop = false;
-            // 
-            // cbActualMeasure
-            // 
-            this.cbActualMeasure.FormattingEnabled = true;
-            this.cbActualMeasure.Items.AddRange(new object[] {
-            "Время",
-            "Давление",
-            "Длина",
-            "Информация",
-            "Масса",
-            "Объём",
-            "Площадь",
-            "Скорость",
-            "Температура",
-            "Энергия"});
-            this.cbActualMeasure.Location = new System.Drawing.Point(125, 73);
-            this.cbActualMeasure.Name = "cbActualMeasure";
-            this.cbActualMeasure.Size = new System.Drawing.Size(121, 21);
-            this.cbActualMeasure.TabIndex = 6;
-            this.cbActualMeasure.Text = "Длина";
-            this.cbActualMeasure.SelectedIndexChanged += new System.EventHandler(this.cbActualMeasure_SelectedIndexChanged);
+            this.tpRussian.Controls.Add(this.cbRussianMeasure);
+            this.tpRussian.Controls.Add(this.tbRussianTo);
+            this.tpRussian.Controls.Add(this.tbRussianFrom);
+            this.tpRussian.Controls.Add(this.cbRussianTo);
+            this.tpRussian.Controls.Add(this.cbRussianFrom);
+            this.tpRussian.Controls.Add(this.btnRussianSwap);
+            this.tpRussian.Controls.Add(this.btnRussianConvert);
+            this.tpRussian.Location = new System.Drawing.Point(4, 22);
+            this.tpRussian.Name = "tpRussian";
+            this.tpRussian.Padding = new System.Windows.Forms.Padding(3);
+            this.tpRussian.Size = new System.Drawing.Size(376, 336);
+            this.tpRussian.TabIndex = 1;
+            this.tpRussian.Text = "Старорусские";
+            this.tpRussian.UseVisualStyleBackColor = true;
             // 
             // cbRussianMeasure
             // 
@@ -279,6 +239,7 @@
             this.cbRussianMeasure.Name = "cbRussianMeasure";
             this.cbRussianMeasure.Size = new System.Drawing.Size(121, 21);
             this.cbRussianMeasure.TabIndex = 13;
+            this.cbRussianMeasure.Text = "Длина";
             // 
             // tbRussianTo
             // 
@@ -331,6 +292,22 @@
             this.btnRussianConvert.Text = "convert";
             this.btnRussianConvert.UseVisualStyleBackColor = true;
             // 
+            // tpImperial
+            // 
+            this.tpImperial.Controls.Add(this.cbImperialMeasure);
+            this.tpImperial.Controls.Add(this.tbImperialTo);
+            this.tpImperial.Controls.Add(this.tbImperialFrom);
+            this.tpImperial.Controls.Add(this.cbImperialTo);
+            this.tpImperial.Controls.Add(this.cbImperialFrom);
+            this.tpImperial.Controls.Add(this.btnImperialSwap);
+            this.tpImperial.Controls.Add(this.btnImperialConvert);
+            this.tpImperial.Location = new System.Drawing.Point(4, 22);
+            this.tpImperial.Name = "tpImperial";
+            this.tpImperial.Size = new System.Drawing.Size(376, 336);
+            this.tpImperial.TabIndex = 2;
+            this.tpImperial.Text = "Имперские";
+            this.tpImperial.UseVisualStyleBackColor = true;
+            // 
             // cbImperialMeasure
             // 
             this.cbImperialMeasure.FormattingEnabled = true;
@@ -347,6 +324,7 @@
             this.cbImperialMeasure.Name = "cbImperialMeasure";
             this.cbImperialMeasure.Size = new System.Drawing.Size(121, 21);
             this.cbImperialMeasure.TabIndex = 13;
+            this.cbImperialMeasure.Text = "Длина";
             // 
             // tbImperialTo
             // 
@@ -399,6 +377,22 @@
             this.btnImperialConvert.Text = "convert";
             this.btnImperialConvert.UseVisualStyleBackColor = true;
             // 
+            // tpJapanese
+            // 
+            this.tpJapanese.Controls.Add(this.cbJapaneseMeasure);
+            this.tpJapanese.Controls.Add(this.tbJapaneseTo);
+            this.tpJapanese.Controls.Add(this.tbJapaneseFrom);
+            this.tpJapanese.Controls.Add(this.cbJapaneseTo);
+            this.tpJapanese.Controls.Add(this.cbJapaneseFrom);
+            this.tpJapanese.Controls.Add(this.btnJapaneseSwap);
+            this.tpJapanese.Controls.Add(this.btnJapaneseConvert);
+            this.tpJapanese.Location = new System.Drawing.Point(4, 22);
+            this.tpJapanese.Name = "tpJapanese";
+            this.tpJapanese.Size = new System.Drawing.Size(376, 336);
+            this.tpJapanese.TabIndex = 3;
+            this.tpJapanese.Text = "Японские";
+            this.tpJapanese.UseVisualStyleBackColor = true;
+            // 
             // cbJapaneseMeasure
             // 
             this.cbJapaneseMeasure.FormattingEnabled = true;
@@ -411,6 +405,7 @@
             this.cbJapaneseMeasure.Name = "cbJapaneseMeasure";
             this.cbJapaneseMeasure.Size = new System.Drawing.Size(121, 21);
             this.cbJapaneseMeasure.TabIndex = 13;
+            this.cbJapaneseMeasure.Text = "Длина";
             // 
             // tbJapaneseTo
             // 
@@ -463,18 +458,16 @@
             this.btnJapaneseConvert.Text = "convert";
             this.btnJapaneseConvert.UseVisualStyleBackColor = true;
             // 
-            // tbPrefix
+            // tpAboutProgram
             // 
-            this.tbPrefix.Dock = System.Windows.Forms.DockStyle.Left;
-            this.tbPrefix.Location = new System.Drawing.Point(0, 0);
-            this.tbPrefix.Multiline = true;
-            this.tbPrefix.Name = "tbPrefix";
-            this.tbPrefix.ReadOnly = true;
-            this.tbPrefix.ShortcutsEnabled = false;
-            this.tbPrefix.Size = new System.Drawing.Size(268, 336);
-            this.tbPrefix.TabIndex = 0;
-            this.tbPrefix.TabStop = false;
-            this.tbPrefix.Text = resources.GetString("tbPrefix.Text");
+            this.tpAboutProgram.Controls.Add(this.tbAboutProgram);
+            this.tpAboutProgram.Controls.Add(this.tbPrefix);
+            this.tpAboutProgram.Location = new System.Drawing.Point(4, 22);
+            this.tpAboutProgram.Name = "tpAboutProgram";
+            this.tpAboutProgram.Size = new System.Drawing.Size(376, 336);
+            this.tpAboutProgram.TabIndex = 4;
+            this.tpAboutProgram.Text = "О программе";
+            this.tpAboutProgram.UseVisualStyleBackColor = true;
             // 
             // tbAboutProgram
             // 
@@ -489,6 +482,19 @@
             this.tbAboutProgram.TabStop = false;
             this.tbAboutProgram.Text = "Program \"Converter\"\r\nversion 1.0\r\nauthor Paul Winter";
             this.tbAboutProgram.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tbPrefix
+            // 
+            this.tbPrefix.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tbPrefix.Location = new System.Drawing.Point(0, 0);
+            this.tbPrefix.Multiline = true;
+            this.tbPrefix.Name = "tbPrefix";
+            this.tbPrefix.ReadOnly = true;
+            this.tbPrefix.ShortcutsEnabled = false;
+            this.tbPrefix.Size = new System.Drawing.Size(268, 336);
+            this.tbPrefix.TabIndex = 0;
+            this.tbPrefix.TabStop = false;
+            this.tbPrefix.Text = resources.GetString("tbPrefix.Text");
             // 
             // MainForm
             // 
@@ -524,7 +530,6 @@
         private System.Windows.Forms.TabPage tpImperial;
         private System.Windows.Forms.TabPage tpJapanese;
         private System.Windows.Forms.TabPage tpAboutProgram;
-        private System.Windows.Forms.ComboBox cbActualMeasure;
         private System.Windows.Forms.TextBox tbActualTo;
         private System.Windows.Forms.TextBox tbActualFrom;
         private System.Windows.Forms.ComboBox cbActualTo;
@@ -554,6 +559,7 @@
         private System.Windows.Forms.Button btnJapaneseConvert;
         private System.Windows.Forms.TextBox tbPrefix;
         private System.Windows.Forms.TextBox tbAboutProgram;
+        internal System.Windows.Forms.ComboBox cbActualMeasure;
     }
 }
 
