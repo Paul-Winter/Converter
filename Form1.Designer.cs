@@ -36,7 +36,7 @@
             this.tpJapanese = new System.Windows.Forms.TabPage();
             this.tpAboutProgram = new System.Windows.Forms.TabPage();
             this.btnActualConvert = new System.Windows.Forms.Button();
-            this.btnActualChange = new System.Windows.Forms.Button();
+            this.btnActualSwap = new System.Windows.Forms.Button();
             this.cbActualFrom = new System.Windows.Forms.ComboBox();
             this.cbActualTo = new System.Windows.Forms.ComboBox();
             this.tbActualFrom = new System.Windows.Forms.TextBox();
@@ -47,21 +47,21 @@
             this.tbRussianFrom = new System.Windows.Forms.TextBox();
             this.cbRussianTo = new System.Windows.Forms.ComboBox();
             this.cbRussianFrom = new System.Windows.Forms.ComboBox();
-            this.btnRussianChange = new System.Windows.Forms.Button();
+            this.btnRussianSwap = new System.Windows.Forms.Button();
             this.btnRussianConvert = new System.Windows.Forms.Button();
             this.cbImperialMeasure = new System.Windows.Forms.ComboBox();
             this.tbImperialTo = new System.Windows.Forms.TextBox();
             this.tbImperialFrom = new System.Windows.Forms.TextBox();
             this.cbImperialTo = new System.Windows.Forms.ComboBox();
             this.cbImperialFrom = new System.Windows.Forms.ComboBox();
-            this.btnImperialChange = new System.Windows.Forms.Button();
+            this.btnImperialSwap = new System.Windows.Forms.Button();
             this.btnImperialConvert = new System.Windows.Forms.Button();
             this.cbJapaneseMeasure = new System.Windows.Forms.ComboBox();
             this.tbJapaneseTo = new System.Windows.Forms.TextBox();
             this.tbJapaneseFrom = new System.Windows.Forms.TextBox();
             this.cbJapaneseTo = new System.Windows.Forms.ComboBox();
             this.cbJapaneseFrom = new System.Windows.Forms.ComboBox();
-            this.btnJapaneseChange = new System.Windows.Forms.Button();
+            this.btnJapaneseSwap = new System.Windows.Forms.Button();
             this.btnJapaneseConvert = new System.Windows.Forms.Button();
             this.tbPrefix = new System.Windows.Forms.TextBox();
             this.tbAboutProgram = new System.Windows.Forms.TextBox();
@@ -94,7 +94,7 @@
             this.tpActual.Controls.Add(this.tbActualFrom);
             this.tpActual.Controls.Add(this.cbActualTo);
             this.tpActual.Controls.Add(this.cbActualFrom);
-            this.tpActual.Controls.Add(this.btnActualChange);
+            this.tpActual.Controls.Add(this.btnActualSwap);
             this.tpActual.Controls.Add(this.btnActualConvert);
             this.tpActual.Location = new System.Drawing.Point(4, 22);
             this.tpActual.Name = "tpActual";
@@ -111,7 +111,7 @@
             this.tpRussian.Controls.Add(this.tbRussianFrom);
             this.tpRussian.Controls.Add(this.cbRussianTo);
             this.tpRussian.Controls.Add(this.cbRussianFrom);
-            this.tpRussian.Controls.Add(this.btnRussianChange);
+            this.tpRussian.Controls.Add(this.btnRussianSwap);
             this.tpRussian.Controls.Add(this.btnRussianConvert);
             this.tpRussian.Location = new System.Drawing.Point(4, 22);
             this.tpRussian.Name = "tpRussian";
@@ -128,7 +128,7 @@
             this.tpImperial.Controls.Add(this.tbImperialFrom);
             this.tpImperial.Controls.Add(this.cbImperialTo);
             this.tpImperial.Controls.Add(this.cbImperialFrom);
-            this.tpImperial.Controls.Add(this.btnImperialChange);
+            this.tpImperial.Controls.Add(this.btnImperialSwap);
             this.tpImperial.Controls.Add(this.btnImperialConvert);
             this.tpImperial.Location = new System.Drawing.Point(4, 22);
             this.tpImperial.Name = "tpImperial";
@@ -144,7 +144,7 @@
             this.tpJapanese.Controls.Add(this.tbJapaneseFrom);
             this.tpJapanese.Controls.Add(this.cbJapaneseTo);
             this.tpJapanese.Controls.Add(this.cbJapaneseFrom);
-            this.tpJapanese.Controls.Add(this.btnJapaneseChange);
+            this.tpJapanese.Controls.Add(this.btnJapaneseSwap);
             this.tpJapanese.Controls.Add(this.btnJapaneseConvert);
             this.tpJapanese.Location = new System.Drawing.Point(4, 22);
             this.tpJapanese.Name = "tpJapanese";
@@ -174,14 +174,15 @@
             this.btnActualConvert.UseVisualStyleBackColor = true;
             this.btnActualConvert.Click += new System.EventHandler(this.btnActualConvert_Click);
             // 
-            // btnActualChange
+            // btnActualSwap
             // 
-            this.btnActualChange.Location = new System.Drawing.Point(150, 130);
-            this.btnActualChange.Name = "btnActualChange";
-            this.btnActualChange.Size = new System.Drawing.Size(75, 23);
-            this.btnActualChange.TabIndex = 1;
-            this.btnActualChange.Text = "change";
-            this.btnActualChange.UseVisualStyleBackColor = true;
+            this.btnActualSwap.Location = new System.Drawing.Point(150, 130);
+            this.btnActualSwap.Name = "btnActualSwap";
+            this.btnActualSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnActualSwap.TabIndex = 1;
+            this.btnActualSwap.Text = "swap";
+            this.btnActualSwap.UseVisualStyleBackColor = true;
+            this.btnActualSwap.Click += new System.EventHandler(this.btnActualSwap_Click);
             // 
             // cbActualFrom
             // 
@@ -202,7 +203,7 @@
             this.cbActualFrom.Name = "cbActualFrom";
             this.cbActualFrom.Size = new System.Drawing.Size(121, 21);
             this.cbActualFrom.TabIndex = 2;
-            this.cbActualFrom.Text = "миллиметр";
+            this.cbActualFrom.Text = "метр";
             // 
             // cbActualTo
             // 
@@ -226,15 +227,16 @@
             // 
             // tbActualFrom
             // 
-            this.tbActualFrom.Location = new System.Drawing.Point(7, 203);
+            this.tbActualFrom.Location = new System.Drawing.Point(28, 203);
             this.tbActualFrom.Name = "tbActualFrom";
             this.tbActualFrom.Size = new System.Drawing.Size(100, 20);
             this.tbActualFrom.TabIndex = 4;
             this.tbActualFrom.Text = "1";
+            this.tbActualFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbActualTo
             // 
-            this.tbActualTo.Location = new System.Drawing.Point(269, 203);
+            this.tbActualTo.Location = new System.Drawing.Point(248, 200);
             this.tbActualTo.Name = "tbActualTo";
             this.tbActualTo.ReadOnly = true;
             this.tbActualTo.ShortcutsEnabled = false;
@@ -261,6 +263,7 @@
             this.cbActualMeasure.Size = new System.Drawing.Size(121, 21);
             this.cbActualMeasure.TabIndex = 6;
             this.cbActualMeasure.Text = "Длина";
+            this.cbActualMeasure.SelectedIndexChanged += new System.EventHandler(this.cbActualMeasure_SelectedIndexChanged);
             // 
             // cbRussianMeasure
             // 
@@ -310,14 +313,14 @@
             this.cbRussianFrom.Size = new System.Drawing.Size(121, 21);
             this.cbRussianFrom.TabIndex = 9;
             // 
-            // btnRussianChange
+            // btnRussianSwap
             // 
-            this.btnRussianChange.Location = new System.Drawing.Point(149, 130);
-            this.btnRussianChange.Name = "btnRussianChange";
-            this.btnRussianChange.Size = new System.Drawing.Size(75, 23);
-            this.btnRussianChange.TabIndex = 8;
-            this.btnRussianChange.Text = "change";
-            this.btnRussianChange.UseVisualStyleBackColor = true;
+            this.btnRussianSwap.Location = new System.Drawing.Point(149, 130);
+            this.btnRussianSwap.Name = "btnRussianSwap";
+            this.btnRussianSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnRussianSwap.TabIndex = 8;
+            this.btnRussianSwap.Text = "swap";
+            this.btnRussianSwap.UseVisualStyleBackColor = true;
             // 
             // btnRussianConvert
             // 
@@ -378,14 +381,14 @@
             this.cbImperialFrom.Size = new System.Drawing.Size(121, 21);
             this.cbImperialFrom.TabIndex = 9;
             // 
-            // btnImperialChange
+            // btnImperialSwap
             // 
-            this.btnImperialChange.Location = new System.Drawing.Point(149, 129);
-            this.btnImperialChange.Name = "btnImperialChange";
-            this.btnImperialChange.Size = new System.Drawing.Size(75, 23);
-            this.btnImperialChange.TabIndex = 8;
-            this.btnImperialChange.Text = "change";
-            this.btnImperialChange.UseVisualStyleBackColor = true;
+            this.btnImperialSwap.Location = new System.Drawing.Point(149, 129);
+            this.btnImperialSwap.Name = "btnImperialSwap";
+            this.btnImperialSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnImperialSwap.TabIndex = 8;
+            this.btnImperialSwap.Text = "swap";
+            this.btnImperialSwap.UseVisualStyleBackColor = true;
             // 
             // btnImperialConvert
             // 
@@ -442,14 +445,14 @@
             this.cbJapaneseFrom.Size = new System.Drawing.Size(121, 21);
             this.cbJapaneseFrom.TabIndex = 9;
             // 
-            // btnJapaneseChange
+            // btnJapaneseSwap
             // 
-            this.btnJapaneseChange.Location = new System.Drawing.Point(150, 129);
-            this.btnJapaneseChange.Name = "btnJapaneseChange";
-            this.btnJapaneseChange.Size = new System.Drawing.Size(75, 23);
-            this.btnJapaneseChange.TabIndex = 8;
-            this.btnJapaneseChange.Text = "change";
-            this.btnJapaneseChange.UseVisualStyleBackColor = true;
+            this.btnJapaneseSwap.Location = new System.Drawing.Point(150, 129);
+            this.btnJapaneseSwap.Name = "btnJapaneseSwap";
+            this.btnJapaneseSwap.Size = new System.Drawing.Size(75, 23);
+            this.btnJapaneseSwap.TabIndex = 8;
+            this.btnJapaneseSwap.Text = "swap";
+            this.btnJapaneseSwap.UseVisualStyleBackColor = true;
             // 
             // btnJapaneseConvert
             // 
@@ -527,28 +530,28 @@
         private System.Windows.Forms.TextBox tbActualFrom;
         private System.Windows.Forms.ComboBox cbActualTo;
         private System.Windows.Forms.ComboBox cbActualFrom;
-        private System.Windows.Forms.Button btnActualChange;
+        private System.Windows.Forms.Button btnActualSwap;
         private System.Windows.Forms.Button btnActualConvert;
         private System.Windows.Forms.ComboBox cbRussianMeasure;
         private System.Windows.Forms.TextBox tbRussianTo;
         private System.Windows.Forms.TextBox tbRussianFrom;
         private System.Windows.Forms.ComboBox cbRussianTo;
         private System.Windows.Forms.ComboBox cbRussianFrom;
-        private System.Windows.Forms.Button btnRussianChange;
+        private System.Windows.Forms.Button btnRussianSwap;
         private System.Windows.Forms.Button btnRussianConvert;
         private System.Windows.Forms.ComboBox cbImperialMeasure;
         private System.Windows.Forms.TextBox tbImperialTo;
         private System.Windows.Forms.TextBox tbImperialFrom;
         private System.Windows.Forms.ComboBox cbImperialTo;
         private System.Windows.Forms.ComboBox cbImperialFrom;
-        private System.Windows.Forms.Button btnImperialChange;
+        private System.Windows.Forms.Button btnImperialSwap;
         private System.Windows.Forms.Button btnImperialConvert;
         private System.Windows.Forms.ComboBox cbJapaneseMeasure;
         private System.Windows.Forms.TextBox tbJapaneseTo;
         private System.Windows.Forms.TextBox tbJapaneseFrom;
         private System.Windows.Forms.ComboBox cbJapaneseTo;
         private System.Windows.Forms.ComboBox cbJapaneseFrom;
-        private System.Windows.Forms.Button btnJapaneseChange;
+        private System.Windows.Forms.Button btnJapaneseSwap;
         private System.Windows.Forms.Button btnJapaneseConvert;
         private System.Windows.Forms.TextBox tbPrefix;
         private System.Windows.Forms.TextBox tbAboutProgram;
