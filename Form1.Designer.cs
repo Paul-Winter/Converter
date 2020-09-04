@@ -501,7 +501,6 @@
             this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "MainForm";
             this.Text = "Конвертер";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl.ResumeLayout(false);
             this.tpActual.ResumeLayout(false);
             this.tpActual.PerformLayout();

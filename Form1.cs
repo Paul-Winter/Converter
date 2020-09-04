@@ -56,9 +56,11 @@ namespace Converter
         public MainForm()
         {
             InitializeComponent();
+
             measure = new Dictionary<string, double>();
 
-            //  начальные значения
+            #region начальные значения
+
             measure.Add("микрометр", mkmeter);
             measure.Add("миллиметр", mmeter);
             measure.Add("сантиметр", cmeter);
@@ -70,13 +72,16 @@ namespace Converter
             measure.Add("километр", kmeter);
             measure.Add("миля", mile);
             measure.Add("морская миля", nautical_mile);
+
+            #endregion
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Метод кнопки конвертации.
+        /// Конвертирует современные меры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualConvert_Click(object sender, EventArgs e)
         {
             double m1 = measure[cbActualFrom.Text];
@@ -85,6 +90,12 @@ namespace Converter
             tbActualTo.Text = (n * m1 / m2).ToString();
         }
 
+        /// <summary>
+        /// Метод кнопки замены.
+        /// Меняет местами современные меры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualSwap_Click(object sender, EventArgs e)
         {
             string temp = cbActualFrom.Text;
@@ -96,6 +107,8 @@ namespace Converter
         {
             switch (cbActualMeasure.Text)
             {
+                #region Время
+
                 case "Время":
                     measure.Clear();
                     measure.Add("наносекунда", nsec);
@@ -136,6 +149,10 @@ namespace Converter
                     cbActualFrom.Text = "час";
                     cbActualTo.Text = "секунда";
                     break;
+
+                #endregion
+
+                #region Длина
 
                 case "Длина":
                     measure.Clear();
@@ -178,6 +195,10 @@ namespace Converter
                     cbActualTo.Text = "миллиметр";
                     break;
 
+                #endregion
+
+                #region Масса
+
                 case "Масса":
                     measure.Clear();
                     measure.Add("микрограмм", mkgram);
@@ -215,6 +236,8 @@ namespace Converter
                     cbActualFrom.Text = "килограмм";
                     cbActualTo.Text = "грамм";
                     break;
+
+                #endregion
 
                 default:
                     break;
