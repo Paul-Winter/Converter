@@ -12,9 +12,17 @@ namespace Converter
 {
     public partial class MainForm : Form
     {
+        Dictionary<string, double> measure;
+        
         public MainForm()
         {
             InitializeComponent();
+            measure = new Dictionary<string, double>();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
