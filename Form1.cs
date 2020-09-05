@@ -13,11 +13,12 @@ namespace Converter
     public partial class MainForm : Form
     {
         Dictionary<string, double> measure;
+        const double unit = 1;
 
         #region современные меры
 
         //  современные меры времени
-        const double sec = 1;
+        const double sec = unit;
         const double min = sec * 60;
         const double hour = min * 60;
         const double day = hour * 24;
@@ -30,14 +31,14 @@ namespace Converter
         const double nsec = mksec / 1000;
 
         //  современные меры давления
-        const double pascal = 1;
+        const double pascal = unit;
         const double atm = pascal * 101325;
         const double bar = pascal * 100000;
         const double torr = atm / 760;
         const double poundStrengthOnSqInch = torr * 51.7149;
 
         //  современные меры длины
-        const double mkmeter = 1;
+        const double mkmeter = unit;
         const double mmeter = mkmeter * 1000;
         const double cmeter = mmeter * 10;
         const double inch = mmeter * 25.4;
@@ -50,7 +51,7 @@ namespace Converter
         const double nautical_mile = meter * 1852;
 
         //  современные меры информации
-        const double bit = 1;
+        const double bit = unit;
         const double @byte = bit * 8;
         const double kbit = bit * 1000;
         const double kibibit = bit * 1024;
@@ -70,7 +71,7 @@ namespace Converter
         const double tebibyte = gibibyte * 1024;
 
         //  современные меры массы
-        const double mkgram = 1;
+        const double mkgram = unit;
         const double mgram = mkgram * 1000;
         const double gram = mgram * 1000;
         const double ounce = gram * 28.3495;
@@ -82,7 +83,7 @@ namespace Converter
         const double british_ton = pound * 2240;
 
         //  современные меры объёма
-        const double mliter = 1;
+        const double mliter = unit;
         const double cubInch = mliter * 16.3871;
         const double liter = mliter * 1000;
         const double american_gallon = cubInch * 231;
@@ -90,7 +91,7 @@ namespace Converter
         const double cubMeter = liter * 1000;
 
         //  современные меры площади
-        const double sqInch = 1;
+        const double sqInch = unit;
         const double sqFoot = sqInch * 144;
         const double sqYard = sqInch * 1296;
         const double sqMeter = sqInch * 1550;
@@ -101,19 +102,19 @@ namespace Converter
         const double sqMile = akr * 640;
 
         //  современные меры скорости
-        const double meterPerSecond = 1;
+        const double meterPerSecond = unit;
         const double footPerSecond = meterPerSecond / 3.281;
         const double kmeterPerHour = meterPerSecond / 3.6;
         const double milePerHour = footPerSecond * 1.46667;
         const double knot = kmeterPerHour * 1.852;
 
         //  современные меры температуры
-        const double celsius = 1;
+        const double celsius = unit;
         const double farenheit = ((celsius - 32) * 5 / 9);
         const double kelvin = (celsius - 273.15);
 
         //  современные меры энергии
-        const double joule = 1;
+        const double joule = unit;
         const double gram_calorie = joule * 4.184;
         const double kcalorie = joule * 4184;
         const double kjoule = joule * 1000;
@@ -298,6 +299,7 @@ namespace Converter
                     measure.Add("километр", kmeter);
                     measure.Add("миля", mile);
                     measure.Add("морская миля", nautical_mile);
+
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("микрометр");
                     cbActualFrom.Items.Add("миллиметр");
@@ -310,6 +312,7 @@ namespace Converter
                     cbActualFrom.Items.Add("километр");
                     cbActualFrom.Items.Add("миля");
                     cbActualFrom.Items.Add("морская миля");
+
                     cbActualTo.Items.Clear();
                     cbActualTo.Items.Add("микрометр");
                     cbActualTo.Items.Add("миллиметр");
@@ -322,6 +325,7 @@ namespace Converter
                     cbActualTo.Items.Add("километр");
                     cbActualTo.Items.Add("миля");
                     cbActualTo.Items.Add("морская миля");
+
                     cbActualFrom.Text = "метр";
                     cbActualTo.Text = "миллиметр";
                     break;
@@ -411,6 +415,7 @@ namespace Converter
                     measure.Add("тонна", ton);
                     measure.Add("американская тонна", american_ton);
                     measure.Add("английская тонна", british_ton);
+
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("микрограмм");
                     cbActualFrom.Items.Add("миллиграмм");
@@ -422,6 +427,7 @@ namespace Converter
                     cbActualFrom.Items.Add("тонна");
                     cbActualFrom.Items.Add("американская тонна");
                     cbActualFrom.Items.Add("английская тонна");
+
                     cbActualTo.Items.Clear();
                     cbActualTo.Items.Add("микрограмм");
                     cbActualTo.Items.Add("миллиграмм");
@@ -433,11 +439,121 @@ namespace Converter
                     cbActualTo.Items.Add("тонна");
                     cbActualTo.Items.Add("американская тонна");
                     cbActualTo.Items.Add("английская тонна");
+
                     cbActualFrom.Text = "килограмм";
                     cbActualTo.Text = "грамм";
                     break;
 
                 #endregion
+
+                #region Объём
+
+                case "Объём":
+                    measure.Clear();
+                    measure.Add("миллилитр", mgram);
+                    measure.Add("кубический дюйм", gram);
+                    measure.Add("литр", ounce);
+                    measure.Add("галлон (американский)", pound);
+                    measure.Add("кубический фут", kgram);
+                    measure.Add("кубический метр", ston);
+
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("миллилитр");
+                    cbActualFrom.Items.Add("кубический дюйм");
+                    cbActualFrom.Items.Add("литр");
+                    cbActualFrom.Items.Add("галлон (американский)");
+                    cbActualFrom.Items.Add("кубический фут");
+                    cbActualFrom.Items.Add("кубический метр");
+
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("миллилитр");
+                    cbActualTo.Items.Add("кубический дюйм");
+                    cbActualTo.Items.Add("литр");
+                    cbActualTo.Items.Add("галлон (американский)");
+                    cbActualTo.Items.Add("кубический фут");
+                    cbActualTo.Items.Add("кубический метр");
+
+                    cbActualFrom.Text = "килограмм";
+                    cbActualTo.Text = "грамм";
+                    break;
+
+                #endregion
+
+                #region Площадь
+
+                case "Площадь":
+                    measure.Clear();
+                    measure.Add("квадратный дюйм", sqInch);
+                    measure.Add("квадратный фут", sqFoot);
+                    measure.Add("квадратный ярд", sqYard);
+                    measure.Add("квадратный метр", sqMeter);
+                    measure.Add("ар", ar);
+                    measure.Add("акр", akr);
+                    measure.Add("гектар", gectar);
+                    measure.Add("квадратный километр", sqKmeter);
+                    measure.Add("квадратная миля", sqMile);
+
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("квадратный дюйм");
+                    cbActualFrom.Items.Add("квадратный фут");
+                    cbActualFrom.Items.Add("квадратный ярд");
+                    cbActualFrom.Items.Add("квадратный метр"); 
+                    cbActualFrom.Items.Add("ар");
+                    cbActualFrom.Items.Add("акр");
+                    cbActualFrom.Items.Add("гектар");
+                    cbActualFrom.Items.Add("квадратный километр");
+                    cbActualFrom.Items.Add("квадратная миля");
+
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("квадратный дюйм");
+                    cbActualTo.Items.Add("квадратный фут");
+                    cbActualTo.Items.Add("квадратный ярд");
+                    cbActualTo.Items.Add("квадратный метр");
+                    cbActualTo.Items.Add("ар");
+                    cbActualTo.Items.Add("акр");
+                    cbActualTo.Items.Add("гектар");
+                    cbActualTo.Items.Add("квадратный километр");
+                    cbActualTo.Items.Add("квадратная миля");
+
+                    cbActualFrom.Text = "гектар";
+                    cbActualTo.Text = "ар";
+                    break;
+
+                #endregion
+
+                #region Скорость
+
+                case "Скорость":
+                    measure.Clear();
+                    measure.Add("метр в секунду", meterPerSecond);
+                    measure.Add("фут в секунду", footPerSecond);
+                    measure.Add("километр в час", kmeterPerHour);
+                    measure.Add("миля в час", milePerHour);
+                    measure.Add("узел", knot);
+
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("метр в секунду");
+                    cbActualFrom.Items.Add("фут в секунду");
+                    cbActualFrom.Items.Add("километр в час");
+                    cbActualFrom.Items.Add("миля в час");
+                    cbActualFrom.Items.Add("узел");
+
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("метр в секунду");
+                    cbActualTo.Items.Add("фут в секунду");
+                    cbActualTo.Items.Add("километр в час");
+                    cbActualTo.Items.Add("миля в час");
+                    cbActualTo.Items.Add("узел");
+
+                    cbActualFrom.Text = "метр в секунду";
+                    cbActualTo.Text = "километр в час";
+                    break;
+
+                #endregion
+
+                //Скорость
+                //Температура
+                //Энергия
 
                 default:
                     break;
