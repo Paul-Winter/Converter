@@ -34,7 +34,7 @@ namespace Converter
         const double atm = pascal * 101325;
         const double bar = pascal * 100000;
         const double torr = atm / 760;
-        const double poundStonSqInch = torr * 51.7149;
+        const double poundStrengthOnSqInch = torr * 51.7149;
 
         //  современные меры длины
         const double mkmeter = 1;
@@ -49,6 +49,26 @@ namespace Converter
         const double mile = yard * 1760;
         const double nautical_mile = meter * 1852;
 
+        //  современные меры информации
+        const double bit = 1;
+        const double @byte = bit * 8;
+        const double kbit = bit * 1000;
+        const double kibibit = bit * 1024;
+        const double mbit = kbit * 1000;
+        const double mebibit = kibibit * 1024;
+        const double gbit = mbit * 1000;
+        const double gibibit = mebibit * 1024;
+        const double tbit = gbit * 1000;
+        const double tebibit = gibibit * 1024;
+        const double kbyte = @byte * 1000;
+        const double kibibyte = @byte * 1024;
+        const double mbyte = kbyte * 1000;
+        const double mebibyte = kibibyte * 1024;
+        const double gbyte = mbyte * 1000;
+        const double gibibyte = mebibyte * 1024;
+        const double tbyte = gbyte * 1000;
+        const double tebibyte = gibibyte * 1024;
+
         //  современные меры массы
         const double mkgram = 1;
         const double mgram = mkgram * 1000;
@@ -61,6 +81,44 @@ namespace Converter
         const double american_ton = pound * 2000;
         const double british_ton = pound * 2240;
 
+        //  современные меры объёма
+        const double mliter = 1;
+        const double cubInch = mliter * 16.3871;
+        const double liter = mliter * 1000;
+        const double american_gallon = cubInch * 231;
+        const double cubFoot = cubInch * 1728;
+        const double cubMeter = liter * 1000;
+
+        //  современные меры площади
+        const double sqInch = 1;
+        const double sqFoot = sqInch * 144;
+        const double sqYard = sqInch * 1296;
+        const double sqMeter = sqInch * 1550;
+        const double ar = sqMeter * 100;
+        const double akr = sqYard * 4840;
+        const double gectar = ar * 100;
+        const double sqKmeter = gectar * 100;
+        const double sqMile = akr * 640;
+
+        //  современные меры скорости
+        const double meterPerSecond = 1;
+        const double footPerSecond = meterPerSecond / 3.281;
+        const double kmeterPerHour = meterPerSecond / 3.6;
+        const double milePerHour = footPerSecond * 1.46667;
+        const double knot = kmeterPerHour * 1.852;
+
+        //  современные меры температуры
+        const double celsius = 1;
+        const double farenheit = ((celsius - 32) * 5 / 9);
+        const double kelvin = (celsius - 273.15);
+
+        //  современные меры энергии
+        const double joule = 1;
+        const double gram_calorie = joule * 4.184;
+        const double kcalorie = joule * 4184;
+        const double kjoule = joule * 1000;
+        const double watt_hour = joule * 3600;
+        const double kWatt_hour = watt_hour * 1000;
 
         #endregion
 
@@ -137,7 +195,12 @@ namespace Converter
             cbActualFrom.Text = cbActualTo.Text;
             cbActualTo.Text = temp;
         }
-
+        
+        /// <summary>
+        /// Метод работает со списком современных мер
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbActualMeasure_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cbActualMeasure.Text)
@@ -198,7 +261,7 @@ namespace Converter
                     measure.Add("бар", bar);
                     measure.Add("атмосфера", atm);
                     measure.Add("торр", torr);
-                    measure.Add("фунт-сила на квадратный дюйм", poundStonSqInch);
+                    measure.Add("фунт-сила на квадратный дюйм", poundStrengthOnSqInch);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("Паскаль");
@@ -261,6 +324,75 @@ namespace Converter
                     cbActualTo.Items.Add("морская миля");
                     cbActualFrom.Text = "метр";
                     cbActualTo.Text = "миллиметр";
+                    break;
+
+                #endregion
+
+                #region Информация
+
+                case "Информация":
+                    measure.Clear();
+                    measure.Add("бит", bit);
+                    measure.Add("байт", @byte);
+                    measure.Add("килобит", kbit);
+                    measure.Add("кибибит", kibibit);
+                    measure.Add("килобайт", kbyte);
+                    measure.Add("кибибайт", kibibyte);
+                    measure.Add("мегабит", mbit);
+                    measure.Add("мебибит", mebibit);
+                    measure.Add("мегабайт", mbyte);
+                    measure.Add("мебибайт", mebibyte);
+                    measure.Add("гигабит", gbit);
+                    measure.Add("гибибит", gibibit);
+                    measure.Add("гигабайт", gbyte);
+                    measure.Add("гибибайт", gibibyte);
+                    measure.Add("терабит", tbit);
+                    measure.Add("тебибит", tebibit);
+                    measure.Add("терабайт", tbyte);
+                    measure.Add("тебибайт", tebibyte);
+
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("бит");
+                    cbActualFrom.Items.Add("байт");
+                    cbActualFrom.Items.Add("килобит");
+                    cbActualFrom.Items.Add("кибибит");
+                    cbActualFrom.Items.Add("килобайт");
+                    cbActualFrom.Items.Add("кибибайт");
+                    cbActualFrom.Items.Add("мегабит");
+                    cbActualFrom.Items.Add("мебибит");
+                    cbActualFrom.Items.Add("мегабайт");
+                    cbActualFrom.Items.Add("мебибайт");
+                    cbActualFrom.Items.Add("гигабит");
+                    cbActualFrom.Items.Add("гибибит");
+                    cbActualFrom.Items.Add("гигабайт");
+                    cbActualFrom.Items.Add("гибибайт");
+                    cbActualFrom.Items.Add("терабит");
+                    cbActualFrom.Items.Add("тебибит");
+                    cbActualFrom.Items.Add("терабайт");
+                    cbActualFrom.Items.Add("тебибайт");
+
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("бит");
+                    cbActualTo.Items.Add("байт");
+                    cbActualTo.Items.Add("килобит");
+                    cbActualTo.Items.Add("кибибит");
+                    cbActualTo.Items.Add("килобайт");
+                    cbActualTo.Items.Add("кибибайт");
+                    cbActualTo.Items.Add("мегабит");
+                    cbActualTo.Items.Add("мебибит");
+                    cbActualTo.Items.Add("мегабайт");
+                    cbActualTo.Items.Add("мебибайт");
+                    cbActualTo.Items.Add("гигабит");
+                    cbActualTo.Items.Add("гибибит");
+                    cbActualTo.Items.Add("гигабайт");
+                    cbActualTo.Items.Add("гибибайт");
+                    cbActualTo.Items.Add("терабит");
+                    cbActualTo.Items.Add("тебибит");
+                    cbActualTo.Items.Add("терабайт");
+                    cbActualTo.Items.Add("тебибайт");
+
+                    cbActualFrom.Text = "байт";
+                    cbActualTo.Text = "бит";
                     break;
 
                 #endregion
