@@ -14,6 +14,7 @@ namespace Converter
     {
         Dictionary<string, double> measure;
         const double unit = 1;
+        static double m1, m2, n;
 
         #region современные меры
 
@@ -110,8 +111,8 @@ namespace Converter
 
         //  современные меры температуры
         const double celsius = unit;
-        const double farenheit = ((celsius - 32) * 5 / 9);
-        const double kelvin = (celsius - 273.15);
+        const double farenheit = unit;
+        const double kelvin = unit;
 
         //  современные меры энергии
         const double joule = unit;
@@ -178,10 +179,49 @@ namespace Converter
         /// <param name="e"></param>
         private void btnActualConvert_Click(object sender, EventArgs e)
         {
-            double m1 = measure[cbActualFrom.Text];
-            double m2 = measure[cbActualTo.Text];
-            double n = Convert.ToDouble(tbActualFrom.Text);
-            tbActualTo.Text = (n * m1 / m2).ToString();
+            //  конвертация мер температуры
+            if (cbActualMeasure.Text == "Температура")
+            {
+                if (cbActualFrom.Text == "градус Фаренгейта" & cbActualTo.Text == "градус Цельсия")
+                {
+                    n = Convert.ToDouble(tbActualFrom.Text);
+                    tbActualTo.Text = ((n - 32) * 5 / 9).ToString();
+                }
+                if (cbActualFrom.Text == "градус Кельвина" & cbActualTo.Text == "градус Цельсия")
+                {
+                    n = Convert.ToDouble(tbActualFrom.Text);
+                    tbActualTo.Text = (n - 273.15).ToString();
+                }
+                if (cbActualFrom.Text == "градус Кельвина" & cbActualTo.Text == "градус Фаренгейта")
+                {
+                    n = Convert.ToDouble(tbActualFrom.Text);
+                    tbActualTo.Text = (((n - 273.15) * 9 / 5) + 32).ToString();
+                }
+                if (cbActualFrom.Text == "градус Цельсия" & cbActualTo.Text == "градус Фаренгейта")
+                {
+                    n = Convert.ToDouble(tbActualFrom.Text);
+                    tbActualTo.Text = ((n * 9 / 5) + 32).ToString();
+                }
+                if (cbActualFrom.Text == "градус Цельсия" & cbActualTo.Text == "градус Кельвина")
+                {
+                    double n = Convert.ToDouble(tbActualFrom.Text);
+                    tbActualTo.Text = (n + 273.15).ToString();
+                }
+                if (cbActualFrom.Text == "градус Фаренгейта" & cbActualTo.Text == "градус Кельвина")
+                {
+                    double n = Convert.ToDouble(tbActualFrom.Text);
+                    tbActualTo.Text = (((n - 32) * 5 / 9) + 273.15).ToString();
+                }
+            }    
+            
+            //  конвертация всех остальных мер
+            else
+            {
+                m1 = measure[cbActualFrom.Text];
+                m2 = measure[cbActualTo.Text];
+                n = Convert.ToDouble(tbActualFrom.Text);
+                tbActualTo.Text = (n * m1 / m2).ToString();
+            }
         }
 
         /// <summary>
@@ -551,8 +591,31 @@ namespace Converter
 
                 #endregion
 
-                //Скорость
-                //Температура
+                #region Температура
+
+                case "Температура":
+                    measure.Clear();
+                    measure.Add("градус Цельсия", celsius);
+                    measure.Add("градус Фаренгейта", farenheit);
+                    measure.Add("градус Кельвина", kelvin);
+
+                    cbActualFrom.Items.Clear();
+                    cbActualFrom.Items.Add("градус Цельсия");
+                    cbActualFrom.Items.Add("градус Фаренгейта");
+                    cbActualFrom.Items.Add("градус Кельвина");
+
+                    cbActualTo.Items.Clear();
+                    cbActualTo.Items.Add("градус Цельсия");
+                    cbActualTo.Items.Add("градус Фаренгейта");
+                    cbActualTo.Items.Add("градус Кельвина");
+
+                    cbActualFrom.Text = "градус Фаренгейта";
+                    cbActualTo.Text = "градус Цельсия";
+                    break;
+
+                #endregion
+
+
                 //Энергия
 
                 default:
