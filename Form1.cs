@@ -929,7 +929,9 @@ namespace Converter
         /// <param name="e"></param>
         private void btnRussianSwap_Click(object sender, EventArgs e)
         {
-
+            string temp = cbRussianFrom.Text;
+            cbRussianFrom.Text = cbRussianTo.Text;
+            cbRussianTo.Text = temp;
         }
         /// <summary>
         /// Метод работает со списком старорусских мер
@@ -960,7 +962,9 @@ namespace Converter
         /// <param name="e"></param>
         private void btnImperialSwap_Click(object sender, EventArgs e)
         {
-
+            string temp = cbImperialFrom.Text;
+            cbImperialFrom.Text = cbImperialTo.Text;
+            cbImperialTo.Text = temp;
         }
         /// <summary>
         /// Метод работает со списком имперских мер
@@ -991,7 +995,9 @@ namespace Converter
         /// <param name="e"></param>
         private void btnJapaneseSwap_Click(object sender, EventArgs e)
         {
-
+            string temp = cbJapaneseFrom.Text;
+            cbJapaneseFrom.Text = cbJapaneseTo.Text;
+            cbJapaneseTo.Text = temp;
         }
         /// <summary>
         /// Метод работает со списком японских мер
