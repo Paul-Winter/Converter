@@ -364,26 +364,9 @@ namespace Converter
             InitializeComponent();
 
             Measure = new Dictionary<string, double>();
-
-            #region начальная инициализация мер
-
-            Measure.Add("микрометр", mkmeter);
-            Measure.Add("миллиметр", mmeter);
-            Measure.Add("сантиметр", cmeter);
-            Measure.Add("дюйм", inch);
-            Measure.Add("дециметр", dmeter);
-            Measure.Add("фут", foot);
-            Measure.Add("ярд", yard);
-            Measure.Add("метр", meter);
-            Measure.Add("километр", kmeter);
-            Measure.Add("миля", mile);
-            Measure.Add("морская миля", nautical_mile);
-
-            Russian_measure.Add("", mmeter);
-            Russian_measure.Add("", meter);
-
-
-            #endregion
+            Russian_measure = new Dictionary<string, double>();
+            Imperial_measure = new Dictionary<string, double>();
+            Japanese_measure = new Dictionary<string, double>();
 
             #region установка стилей списков
 
@@ -406,6 +389,62 @@ namespace Converter
             cbJapaneseMeasure.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJapaneseFrom.DropDownStyle = ComboBoxStyle.DropDownList;
             cbJapaneseTo.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            #endregion
+
+            //  Начальная инициализация мер:
+            #region современных
+
+            Measure.Add("микрометр", mkmeter);
+            Measure.Add("миллиметр", mmeter);
+            Measure.Add("сантиметр", cmeter);
+            Measure.Add("дюйм", inch);
+            Measure.Add("дециметр", dmeter);
+            Measure.Add("фут", foot);
+            Measure.Add("ярд", yard);
+            Measure.Add("метр", meter);
+            Measure.Add("километр", kmeter);
+            Measure.Add("миля", mile);
+            Measure.Add("морская миля", nautical_mile);
+
+            #endregion
+
+            #region старорусских
+
+            Russian_measure.Add("миллиметр", mmeter);
+            Russian_measure.Add("метр", meter);
+            Russian_measure.Add("линия", linia);
+            Russian_measure.Add("дюйм", duim);
+            Russian_measure.Add("вершок", vershok);
+            Russian_measure.Add("ладонь", ladon);
+            Russian_measure.Add("четверть", chetvert);
+            Russian_measure.Add("аршин", arshin);
+            Russian_measure.Add("пядь", pyad);
+            Russian_measure.Add("фут", fut);
+            Russian_measure.Add("локоть", lokot);
+            Russian_measure.Add("шаг", shag);
+            Russian_measure.Add("сажень маховая", mahovaya_sagen);
+            Russian_measure.Add("сажень косая", kosaya_sagen);
+            Russian_measure.Add("сажень казённая", kazennaya_sagen);
+            Russian_measure.Add("шест", shest);
+            Russian_measure.Add("цепь", cep);
+            Russian_measure.Add("верста", versta);
+            Russian_measure.Add("русская миля", rus_mile);
+            Russian_measure.Add("поприще", poprische);
+
+            #endregion
+
+            #region имперских
+
+            Imperial_measure.Add("миллиметр", mmeter);
+            Imperial_measure.Add("метр", meter);
+
+            #endregion
+
+            #region японских
+
+            Japanese_measure.Add("миллиметр", mmeter);
+            Japanese_measure.Add("метр", meter);
 
             #endregion
         }
@@ -936,7 +975,85 @@ namespace Converter
         /// <param name="e"></param>
         private void cbRussianMeasure_SelectedIndexChanged(object sender, EventArgs e)
         {
+            switch (cbRussianMeasure.Text)
+            {
+                #region Длина
 
+                case "Длина":
+                    Russian_measure.Clear();
+                    Russian_measure.Add("миллиметр", mmeter);
+                    Russian_measure.Add("метр", meter);
+                    Russian_measure.Add("линия", linia);
+                    Russian_measure.Add("дюйм", duim);
+                    Russian_measure.Add("вершок", vershok);
+                    Russian_measure.Add("ладонь", ladon);
+                    Russian_measure.Add("четверть", chetvert);
+                    Russian_measure.Add("аршин", arshin);
+                    Russian_measure.Add("пядь", pyad);
+                    Russian_measure.Add("фут", fut);
+                    Russian_measure.Add("локоть", lokot);
+                    Russian_measure.Add("шаг", shag);
+                    Russian_measure.Add("сажень маховая", mahovaya_sagen);
+                    Russian_measure.Add("сажень косая", kosaya_sagen);
+                    Russian_measure.Add("сажень казённая", kazennaya_sagen);
+                    Russian_measure.Add("шест", shest);
+                    Russian_measure.Add("цепь", cep);
+                    Russian_measure.Add("верста", versta);
+                    Russian_measure.Add("русская миля", rus_mile);
+                    Russian_measure.Add("поприще", poprische);
+
+                    cbRussianFrom.Items.Clear();
+                    cbRussianFrom.Items.Add("миллиметр");
+                    cbRussianFrom.Items.Add("метр");
+                    cbRussianFrom.Items.Add("линия");
+                    cbRussianFrom.Items.Add("дюйм");
+                    cbRussianFrom.Items.Add("вершок");
+                    cbRussianFrom.Items.Add("ладонь");
+                    cbRussianFrom.Items.Add("четверть");
+                    cbRussianFrom.Items.Add("аршин");
+                    cbRussianFrom.Items.Add("пядь");
+                    cbRussianFrom.Items.Add("фут");
+                    cbRussianFrom.Items.Add("локоть");
+                    cbRussianFrom.Items.Add("шаг");
+                    cbRussianFrom.Items.Add("сажень маховая");
+                    cbRussianFrom.Items.Add("сажень косая");
+                    cbRussianFrom.Items.Add("сажень казённая");
+                    cbRussianFrom.Items.Add("шест");
+                    cbRussianFrom.Items.Add("цепь");
+                    cbRussianFrom.Items.Add("верста");
+                    cbRussianFrom.Items.Add("русская миля");
+                    cbRussianFrom.Items.Add("поприще");
+
+                    cbRussianTo.Items.Clear();
+                    cbRussianTo.Items.Add("миллиметр");
+                    cbRussianTo.Items.Add("метр");
+                    cbRussianTo.Items.Add("линия");
+                    cbRussianTo.Items.Add("дюйм");
+                    cbRussianTo.Items.Add("вершок");
+                    cbRussianTo.Items.Add("ладонь");
+                    cbRussianTo.Items.Add("четверть");
+                    cbRussianTo.Items.Add("аршин");
+                    cbRussianTo.Items.Add("пядь");
+                    cbRussianTo.Items.Add("фут");
+                    cbRussianTo.Items.Add("локоть");
+                    cbRussianTo.Items.Add("шаг");
+                    cbRussianTo.Items.Add("сажень маховая");
+                    cbRussianTo.Items.Add("сажень косая");
+                    cbRussianTo.Items.Add("сажень казённая");
+                    cbRussianTo.Items.Add("шест");
+                    cbRussianTo.Items.Add("цепь");
+                    cbRussianTo.Items.Add("верста");
+                    cbRussianTo.Items.Add("русская миля");
+                    cbRussianTo.Items.Add("поприще");
+
+                    cbRussianFrom.Text = "метр";
+                    cbRussianTo.Text = "миллиметр";
+                    break;
+
+                    #endregion
+
+
+            }
         }
 
 

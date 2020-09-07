@@ -264,18 +264,62 @@
             // cbRussianTo
             // 
             this.cbRussianTo.FormattingEnabled = true;
+            this.cbRussianTo.Items.AddRange(new object[] {
+            "миллиметр",
+            "метр",
+            "линия",
+            "дюйм",
+            "вершок",
+            "ладонь",
+            "четверть",
+            "аршин",
+            "пядь",
+            "фут",
+            "локоть",
+            "шаг",
+            "сажень маховая",
+            "сажень косая",
+            "сажень казённая",
+            "шест",
+            "цепь",
+            "верста",
+            "русская миля",
+            "поприще"});
             this.cbRussianTo.Location = new System.Drawing.Point(247, 130);
             this.cbRussianTo.Name = "cbRussianTo";
             this.cbRussianTo.Size = new System.Drawing.Size(121, 21);
             this.cbRussianTo.TabIndex = 10;
+            this.cbRussianTo.Text = "миллиметр";
             // 
             // cbRussianFrom
             // 
             this.cbRussianFrom.FormattingEnabled = true;
+            this.cbRussianFrom.Items.AddRange(new object[] {
+            "миллиметр",
+            "метр",
+            "линия",
+            "дюйм",
+            "вершок",
+            "ладонь",
+            "четверть",
+            "аршин",
+            "пядь",
+            "фут",
+            "локоть",
+            "шаг",
+            "сажень маховая",
+            "сажень косая",
+            "сажень казённая",
+            "шест",
+            "цепь",
+            "верста",
+            "русская миля",
+            "поприще"});
             this.cbRussianFrom.Location = new System.Drawing.Point(6, 130);
             this.cbRussianFrom.Name = "cbRussianFrom";
             this.cbRussianFrom.Size = new System.Drawing.Size(121, 21);
             this.cbRussianFrom.TabIndex = 9;
+            this.cbRussianFrom.Text = "метр";
             // 
             // btnRussianSwap
             // 
