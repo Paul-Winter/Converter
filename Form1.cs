@@ -134,7 +134,7 @@ namespace Converter
         const double duim = linia * 10;
         const double vershok = duim * 1.75;
         const double ladon = cmeter * 7.5;
-        const double chet = vershok * 4;
+        const double chetvert = vershok * 4;
         const double arshin = vershok * 16;
         const double pyad = cmeter * 17.78;
         const double fut = duim * 12;
@@ -149,8 +149,66 @@ namespace Converter
         const double rus_mile = versta * 7;
         const double poprische = versta;
 
+        //  старорусские меры массы
+        const double dolya = mgram * 44.43494;
+        const double zolotnik = dolya * 96;
+        const double lot = zolotnik * 3;
+        const double grivenka = zolotnik * 48;
+        const double funt = lot * 32;
+        const double grivna = funt;
+        const double batman = funt * 10;
+        const double pud = lot * 1280;
+        const double polpuda = pud / 2;
+        const double kantar = kgram * 40.95;
+        const double berkovec = pud * 10;
+        const double chetvert_voschanaya = pud * 12;
+        const double last = pud * 72;
 
+        //  старорусские меры объёма
+        const double cubSagen = cubArshin * 27;
+        const double cubArshin = cubVershok * 4096;
+        const double cubVershok = cubDuim * 5.3594;
+        const double cubFut = cubDuim * 1728;
+        const double cubDuim = cubLinia * 1000;
+        const double cubLinia = cubMmeter * 16.3871;
+        const double cubMmeter = mliter / 1000;
 
+        //  старорусские меры объёма жидких тел (винные меры)
+        const double shkalik = mliter * 61.5;
+        const double charka = shkalik * 2;
+        const double chetushka = charka * 2;
+        const double stakan = liter * 0.273;
+        const double kosushka = shkalik * 5;
+        const double butilka_vodki = charka * 5;
+        const double butilka_vina = stakan * 3;
+        const double shtof = shkalik * 20;
+        const double garnec = stakan * 12;
+        const double chetvert_vedra = garnec;
+        const double vedro = garnec * 4;
+        const double korchaga = vedro * 2;
+        const double bochka = vedro * 40;
+
+        //  старорусские меры объёма сыпучих тел (хлебные меры)
+        const double polugarnec = stakan * 6;
+        const double chetverka = liter * 6.56;
+        const double poluchetverik = liter * 13.12;
+        const double chetverik = garnec * 8;
+        const double mera = chetverik;
+        const double polosminy = liter * 52.48;
+        const double osmina = chetverik * 4;
+        const double chet_sip = garnec * 64;
+        const double polovnik = liter * 419.84;
+        const double kadka = osmina * 8;
+
+        //  старорусские меры площади
+        const double sqCmeter = sqMeter / 10000;
+        const double sqVershok = sqCmeter * 19.758;
+        const double sqArshin = sqVershok * 256;
+        const double sqSagen = sqArshin * 9;
+        const double osminnik = sqSagen * 300;
+        const double chet = sqSagen * 1200;
+        const double desyatina = sqSagen * 2400;
+        const double sqVersta = sqSagen * 250000;
 
         #endregion
 
