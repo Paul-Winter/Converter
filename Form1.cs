@@ -79,7 +79,7 @@ namespace Converter
         const double ounce = gram * 28.3495;
         const double pound = ounce * 16;
         const double kgram = gram * 1000;
-        const double ston = ounce * 224;
+        const double stone = ounce * 224;
         const double ton = kgram * 1000;
         const double american_ton = pound * 2000;
         const double british_ton = pound * 2240;
@@ -88,7 +88,7 @@ namespace Converter
         const double mliter = unit;
         const double cubInch = mliter * 16.3871;
         const double liter = mliter * 1000;
-        const double american_gallon = cubInch * 231;
+        const double gallon_american = cubInch * 231;
         const double cubFoot = cubInch * 1728;
         const double cubMeter = liter * 1000;
 
@@ -122,8 +122,6 @@ namespace Converter
         const double kjoule = joule * 1000;
         const double watt_hour = joule * 3600;
         const double kWatt_hour = watt_hour * 1000;
-
-
 
         #endregion
 
@@ -215,165 +213,140 @@ namespace Converter
         #region имперские меры
 
         //  имперские меры длины
-        //1 лига(league, Великобритания и США) = 3 милям = 24 фурлонгам = 4828,032 метра.
-        //1 морская миля(nautical mile, Великобритания) = 10 кабельтовым = 1,853257 км
-        //1 морская миля(nautical mile, США, с 1 июля 1954) = 1,852 км
-        //1 кабельтов(cable, Великобритания) = 185,3182 м
-        //1 кабельтов(cable, США) = 185,3249 м
-        //1 уставная миля(statute mile) = 8 фурлонгам = 5 280 футам = 1609,344 м
-        //1 фурлонг(или фарлонг) (furlong) = 10 чейнам = 201,168 м
-        //1 чейн(chain) = 4 родам = 100 линкам = 20,1168 м
-        //1 род(rod, pole, perch, поль, перч) = 5,5 ярдам = 5,0292 м
-        //1 ярд(yard) = 3 футам = 0,9144 м
-        //1 фут(foot) = 3 хэндам = 12 дюймам = 0,3048 м
-        //1 хэнд(hand) = 4 дюймам = 10,16 см
-        //1 барликорн(barleycorn) = 1/3 дюйма = 8,4667 мм
-        //1 дюйм(inch) = 12 линиям = 72 точкам = 1000 милам = 2,54 см
-        //1 линия(line) = 6 точкам = 2,1167 мм
-        //1 точка(point) = 0,353 мм
-        //1 мил(mil) = 0,0254 мм
+        const double league = furlong * 24;
+        const double nautical_mile_british = cable_british * 10;
+        const double cable_british = meter * 185.3182;
+        const double cable_american = meter * 185.3249;
+        const double statute_mile = furlong * 8;
+        const double furlong = chain * 10;
+        const double chain = rod * 4;
+        const double rod = yard * 5.5;
+        const double hand = inch * 4;
+        const double barleycorn = inch / 3;
+        const double line = point * 6;
+        const double point = inch / 72;
+        const double mil = inch / 1000;
 
         //  имперские меры массы (американские)
-        //1 квинтал = 1 хандредвейт = 100 фунтов = 1 центал = 45,36 кг
-        //1 слаг = 14,6 кг
-        //1 квартер = 1/4 хандредвейта = 25 фунтов = 11,34 кг
-        //1 стоун = 14 фунтов = 6,35 кг
+        const double quintal = pound * 100;
+        const double hundredweight = quintal;
+        const double cental = quintal;
+        const double slag = kgram * 14.6;
+        const double quarter = pound * 25;
 
         //  имперские меры массы(британские)
-        //1 тонна большая(длинная) (long ton) = 20 хандредвейтам(квинталам) = 2240 фунтов = 1016,05 кг
-        //1 тонна малая(короткая) (short ton, США, Канада и др.) = 20 хандредвейтам малым(центалам) = 2000 фунтов = 32000 унций = 907,185 кг
-        //1 тонна метрическая(metric ton) = 2204,6 фунта = 0,984 большой тонны = 1000 кг
-        //1 киль = 8 челдронам =424 хандредвейтам =47488 фунтов =21540,16 кг
-        //1 челдрон для угля(chaldron) = 1/8 киля = 53 хандредвейтам = 5936 фунтов = 2692,52 кг
-        //1 вей = 2—3 хандредвейтам = 101,6—152,4 кг
-        //1 квинтал(quintal) = 1 большой хандредвейт(long hundredweight) = 112 фунтам = 50,802 кг
-        //1 центал(центнер) = 1 малый хандредвейт(short hundredweight) = 100 фунтам = 45,36 кг
-        //1 слаг = 14,6 кг
-        //1 тод(tod, «груз») = 1 квартеру длинному = 1 / 4 хандредвейта большого = 28 фунтам = 2 стоунам = 12,7 кг
-        //1 квартер короткий(short quarter, «четверть») = 1/4 хандредвейта малого = 25 фунтам = 11,34 кг
-        //1 Стоун(stone, «камень») = 1/2 квартера большого = 1 / 8 хандредвейта большого = 14 фунтам = 6,350293 кг
-        //1 клов(уст.) = 1/2 стоуна = 1/16 хандредвейта = 7 фунтов = 3,175 кг(ранее величина клова составляла 6,25—8 фунтов = 2,834—3,629 кг)
-        //1 квартерн = 1/4 стоуна = 3,5 фунта = 1,588 кг
-        //1 фунт(pound, лат.pondus, сокр.lb) = 16 унциям = 7000 гранов = 453,59237 г
-        //1 унция(ounce, oz) = 16 драхмам = 437,5 гранам = 28,349523125 г
-        //1 драхма(dram)= 1/16 унции = 27,34375 гран = 1,7718451953125 г
-        //1 гран(grain, лат.granum, сокр.gr) (до 1985 года) = 64,79891 мг
+        const double long_ton = pound * 2240;
+        const double short_ton = pound * 2000;
+        const double kile = cheldron * 8;
+        const double cheldron = pound * 5936;
+        const double long_hundredweight = pound * 112;
+        const double short_hundredweight = pound * 100;
+        const double tod = pound * 28;
+        const double clove = pound * 7;
+        const double quartern = stone / 4;
+        const double dram = ounce / 16;
+        const double grain = mgram * 64.79891;
 
-        //  имперские меры объёма жидких тел(американские)
-        //1 баррель = 31—42 галлонов = 140,6—190,9 литров
-        //1 баррель для жидкости = 31,5 галлонов[источник не указан 2501 день] = 119,2 л(дм³)
-        //1 баррель для сырой нефти = 42,2 галлонов = 158,97 л(дм³)
-        //1 галлон амер. = 0,833 галлона англ. = 3,784 л (дм³)
-        //1 кварта амер. = 0,833 кварты англ. = 0,946 л (дм³)
-        //1 пинта жидкая амер. = 1/8 амер.галлона = 0,473 л(дм³)
-        //1 джилл(гилл) = 1/4 пинты амер. = 0,118 л (дм³)
-        //1 унция жидкая(fl oz) = 1/128 галлона = 1,041 унции англ. = 2 ст.ложки = 1 / 8 стакана = 29,56 мл (см³)
-        //1 рюмка = 16 жидк.драхмам = 2 унции = 1/4 стакана = 59,12 мл
-        //1 драхма жидкая = 1 / 8 жидкой унции = 3,6966 мл
-        //1 столовая ложка(ст.л.) = 3 чайных ложки(ч.л.) = 4 жидк.драхмы = 1/2 жидк.унции = 14,8 мл
-        //1 чайная ложка(ч.л.) = 1/3 столовой ложки(ст.л.) = 1 1/3 жидк.драхмы = 4,9 мл
-        //1 чайная ложка = 60 капель(0,08 мл)
-        //1 кофейная ложка = 1 / 2 ч.л. = 2,45 мл
-        //1 ложечка для приправ = 1/4 ч.л. = 1,225 мл
-        //1 миним = 1/60 жидк.драхмы = 0,06 мл
+        //  имперские меры объёма жидких тел (американские)
+        const double barrel_american = gallon_american * 31;
+        const double barrelOfCrudOil = gallon_american * 42.2;
+        const double pint_american = gallon_american / 8;
+        const double gill = pint_american / 4;
+        const double liqOunce_american = gallon_american / 128;
+        const double drink = liqOunce_american * 2;
+        const double drahm = liqOunce_american / 8;
+        const double spoon_tea_american = mliter * 4.9;
+        const double spoon_table_american = spoon_tea_american * 3;
+        const double drop = spoon_tea_american / 60;
+        const double spoon_coffee_american = spoon_tea_american / 2;
+        const double spoon_spice_american = spoon_tea_american / 4;
+        const double minim_british = mliter * 0.05919;
 
-        //  имперские меры объёма жидких тел(британские)
-        //1 бат(«торец») = 108—140 галлонам = 490,97—636,44 л(дм³, около 2 хогзхедов)
-        //1 бат пива = 108 галлонов = 17,339 фут³ = 490,97 л
-        //1 пайп = 105 галлонам = 2 хогзхеда = 477,34 л(дм³)
-        //1 хогсхед(большая бочка, «кабанья голова») = 52,5 имперских галлона = 238,67 л(дм³)
-        //1 баррель = 31—42 галлонам = 140,9—190,9 л(дм³)
-        //1 баррель для жидкости(пива) (Баррель (единица объёма)) = 36 имперским галлонам = 163,65 л(дм³)
-        //1 баррель для сырой нефти = 34,97 галлонам = 158,988 л(дм³)
-        //1 килдеркин = 1/2 барреля = 2 феркинам = 16—18 галлонам = 72,7—81,8 л(дм³)
-        //1 феркин(fir; «маленький бочонок») = 1/6 хогсхеда = 1/4 барреля = 1/2 килдеркина = 8—9 галлонам = 36 квартам = 36,3—40,9 л(дм³)
-        //1 имперский галлон = 4 квартам = 8 пинтам = 32 джилла = 160 жидк.унциям = 4,546 л(дм³)
-        //1 потл = 1/2 импер.галлона = 2 квартам = 2,27 л(дм³)
-        //1 кварта = 1/4 импер.галлона = 2 пинтам = 1,1365 л(дм³)
-        //1 бутылка молока = 1 кварте = 946,36 мл
-        //1 бутылка виски = 1 пятой = 757,1 мл
-        //1 бутылка шампанского = 2 / 3 кварты = 630,91 мл(французское шампанское, 750 мл)
-        //1 бутылка вина = 750 мл = 25,3605 жидких унций
-        //1 бакет(«ковш») неофициальная единица = 5 импер.галлонам = 18,927 л
-        //1 филет = 1/2 бутылки шампанского = 375 мл
-        //1 пинта = 1/8 импер.галлона = 1/2 кварты = 4 джиллам(гиллам) = 20 унциям жидким = 34,678 дюймам³ = 0,568 261 л(дм³)
-        //1 джилл(гилл) = 1/4 пинты = 5 жидк.унциям = 8,670 дюймов³ = 0,142 л(дм³)
-        //1 чашка для завтрака = 1/2 пинты = 10 жидк.унциям = 17,339 дюймам³ = 1,2 ам.чашке = 284 мл
-        //1 столовая ложка = 3 чайным ложкам = 4 жидк.драхмы = 1/2 жидкой унции = 14,2 мл
-        //1 чайная ложка = 1 / 3 столовой ложки = 1 1/3 жидк.драхмы = 4,7 мл(из другого источника: = 1/8 жидк.унции = 3,55 мл (традиц.), мед.и кухня = 5 мл)
-        //1 винная рюмка, бокал = 16 жидк.драхмам = 2 жидк.унциям = 56,8 мл; по другим данным равна 2,5 жидк.унциям = 5 столовых ложек = 1 / 2 джилла = 71 мл
-        //1 унция жидкая(fl oz) = 1/20 пинты = 1/5 джилла = 8 жидк.драхмам = 24 жидк.скрупулам = 1,733 871 дюймам³ = 28,413063 мл(см³)
-        //1 драхма жидкая(1878 — 1 февраля 1971 года) = 3 жидк.скрупулам = 1/8 жидк.унции = 60 минимам = 0,96 ам.жидк.драхмам = 0,216734 дюйма³ = 3,551633 мл
-        //1 жидк.скрупул аптек. (1878 — 1 февраля 1971 года) = 1/3 жидк.драхмы = 1/24 жидк.унции = 20 минимам = 19,2 ам.минима = 1,18388 мл
-        //1 миним аптек. (1878 — 1 февраля 1971 года) = 1/60 жидк.драхмы = 1/20 жидк.скрупула = 0,96 ам.минима = 0,05919 мл
+        //  имперские меры объёма жидких тел (британские)
+        const double winebottle = mliter * 750;
+        const double wineglass = liqDram * 16;
+        const double liqOunce = scrupul * 24;
+        const double liqDram = minim_british * 60;
+        const double scrupul = minim_british * 20;
+        const double spoon_tea_british = liqDram * 4;
+        const double spoon_table_british = spoon_tea_british * 3;
+        const double breakfastCup = liqOunce * 10;
+        const double gill_british = liqOunce * 5;
+        const double liqPint_british = liqOunce * 20;
+        const double filet = mliter * 375;
+        const double bucket = gallon_british * 5;
+        const double liqQuarta = liqPint_british * 2;
+        const double pottle = liqQuarta * 2;
+        const double liqGallon = liqOunce * 160;
+        const double firkin = liqQuarta * 36;
+        const double kilderkin = firkin * 2;
+        const double liqBarrel = liqGallon * 36;
+        const double hogshead = liqGallon * 52.5;
+        const double pipe = liqGallon * 105;
+        const double but = liqGallon * 108; 
 
-        //  имперские меры объёма сыпучих тел(американские)
-        //1 квартер = 2 коума = 64 галлона = 8 бушелей = 282 л
-        //1 коум = 4 бушеля = 32 галлона = 141 л
-        //1 баррель для сыпучих тел = 117,3—158,98 л
-        //1 бушель = 0,9689 англ.бушеля = 35,2393 л; по другим данным равен 35,23907017 л = 9,309177489 американских галлонов
-        //1 пек амер. = 0,9689 пека англ. = 8,81 л
-        //1 галлон = 4,405 л
-        //1 кварта амер. = 1,101 л
-        //1 пинта сухая амер. = 1 / 64 бушеля = 1 / 8 галлона = 0,551 литра
-        //1 унция (uncia, oz) = 16 драхмам = 437,5 грана = 28,35 г
+        //  имперские меры объёма сыпучих тел (американские)
+        const double ounce_american = gram * 28.35;
+        const double quarter_american = liter * 282;
+        const double coum_american = quarter_american / 2;
+        const double bushel_american = liter * 35.2393;
+        const double pek_american = liter * 8.81;
+        const double gallon = liter * 4.405;
+        const double quarta_american = liter * 1.101;
+        const double pint_american_dry = gallon / 8;
 
-        //  имперские меры объёма сыпучих тел(британские)
-        //1 челдрон(челдер; chd; «котел, большой чайник») = 32—36 бушелям = 1268—1309 л(дм³)
-        //1 квартер = 2 коумам = 64 галлонам = 8 бушелям = 290,93 л(дм³)
-        //1 коум = 4 бушелям = 32 галлонам = 145,475 л(дм³)
-        //1 баррель для сыпучих тел = 36—40 галлонам = 163,6—181,7 л(дм³)
-        //1 сак(«мешок») = 3 бушелям = 109,05 л(дм³)
-        //1 страйк = 2 бушелям = 72,73 л(дм³)
-        //1 бушель = 4 пекам = 8 галлонам = 32 сух.квартам = 64 сух.пинтам = 1,032 ам.бушеля = 2219,36 дюймов³ = 36,36872 л(дм³)
-        //1 пек = 2 галлонам = 1,032 пека ам. = 9,092 л (дм³)
-        //1 галлон = 4 квартам = 8 пинтам = 4,546 л(дм³)
-        //1 кварта = 2 пинтам = 1,032 кварты ам. = 1,136 л (дм³)
-        //1 квартерн сух. (четверть) = 1/4 пека = 2 кварты = 2,2731 л
-        //1 пинта = 0,568261 л(дм³)
+        //  имперские меры объёма сыпучих тел (британские)
+        const double pint_british = liter * 0.568261;
+        const double quart_british = pint_british * 2;
+        const double quartern_british = quart_british * 2;
+        const double gallon_british = pint_british * 8;
+        const double pek = gallon_british * 2;
+        const double bushel = pint_british * 64;
+        const double strike = bushel * 2;
+        const double sack = bushel * 3;
+        const double barrel_british = gallon_british * 40;
+        const double coum_british = gallon_british * 32;
+        const double quarter_british = bushel * 8;
+        const double chelder = bushel * 36;
 
         //  имперские меры площади
-        //1 миля² (square mile) = 640 акрам = 2,59 км²
-        //1 акр(acre) = 4 рудам = 4046,86 м²
-        //1 руд(rood) = 40 род² = 1011,71 м²
-        //1 род² (square rod) (поль², перч²) = 30,25 ярд² = 25,293 м²
-        //1 ярд² (square yard) = 9 фут² = 0,83613 м²
-        //1 фут² (square foot) = 144 дюйм² = 929,03 см²
-        //1 дюйм² (square inch) = 6,4516 см²
+        const double rood = sqRod * 40;
+        const double sqRod = sqYard * 30.25;
 
         #endregion
 
         #region японские меры
 
         //  японские меры длины
-        //бу 分		            1∕330	3,03 мм U+5206
-        //сун 寸	10 бу	        1∕33	3,03 см U+5BF8
-        //сяку    尺	10 сун	    10∕33	30,3 см U+5C3A
-        //кэн 間	6 сяку	        20∕11	1,81 м U+9593
-        //хиро 尋	6 сяку	    20/11	1,81 м U+5C0B
-        //дзё 丈	10 сяку	        100∕33	3,03 м U+4E08
-        //тё 町	36 дзё = 60 кэн	1200∕11	109 м U+753A
-        //ри  里	36 тё	        43200∕11	3927 м U+91CC
+        const double bu = mmeter * 3.03;
+        const double sun = bu * 10;
+        const double syaku = sun * 10;
+        const double ken = syaku * 6;
+        const double hiro = ken;
+        const double dze = syaku * 10;
+        const double te = ken * 60;
+        const double ri = te * 36;
 
         //  японские меры массы
-        //1 фун(分)         = 375 мг
-        //1 моммэ(匁)       = 10 фунам	= 3,75 г
-        //1 кин(斤)         = 160 моммэ	= 600 г
-        //1 кан(貫, 貫目)   = 1000 моммэ	= 3,75 кг
+        const double fun = mgram * 375;
+        const double momme = fun * 10;
+        const double kin = momme * 160;
+        const double kan = momme * 1000;
 
         //  японские меры объёма
-        //го 合		        ≈ 0,18039	U+5408
-        //сё 升	10 го	    ≈ 1,8039	U+5347
-        //то 斗	10 сё	    ≈ 18,039	U+6597
-        //коку 石	10 то	≈ 180,39	U+77F3
+        const double go = liter * 0.18039;
+        const double se = go * 10;
+        const double to = se * 10;
+        const double koku = to * 10;
 
         //  японские меры площади
-        //1 го 合       = 1 / 10 цубо	= 33,058 дм²
-        //1 дзё 畳	    ≈ 1/2 цубо	≈ 1,65 м²
-        //1 цубо 坪     = 10 го = 1 кэн²	= 3,3058 м² (400/121 м²)
-        //1 унэ 畝      = 30 цубо	= 99,174 м²
-        //1 тан 段, 反  = 10 унэ	= 991,736 м² ≈ 9,92 а
-        //1 тё 町       = 10 танам	= 9917,36 м² ≈ 0,992 га
+        const double sqKen = sqMeter * 3.3058;
+        const double tsubo = sqKen;
+        const double sqGo = tsubo / 10;
+        const double sqDze = tsubo / 2;
+        const double une = tsubo * 30;
+        const double tan = une * 10;
+        const double sqTe = tan * 10;
 
         #endregion
 
@@ -711,7 +684,7 @@ namespace Converter
                     Measure.Add("унция", ounce);
                     Measure.Add("фунт", pound);
                     Measure.Add("килограмм", kgram);
-                    Measure.Add("стон", ston);
+                    Measure.Add("стон", stone);
                     Measure.Add("тонна", ton);
                     Measure.Add("американская тонна", american_ton);
                     Measure.Add("английская тонна", british_ton);
@@ -753,7 +726,7 @@ namespace Converter
                     Measure.Add("миллилитр", mliter);
                     Measure.Add("кубический дюйм", cubInch);
                     Measure.Add("литр", liter);
-                    Measure.Add("галлон (американский)", american_gallon);
+                    Measure.Add("галлон (американский)", gallon_american);
                     Measure.Add("кубический фут", cubFoot);
                     Measure.Add("кубический метр", cubMeter);
 
