@@ -127,6 +127,33 @@ namespace Converter
 
         #endregion
 
+        #region старорусские меры
+
+        //  старорусские меры длины
+        const double linia = mmeter * 2.54;
+        const double duim = linia * 10;
+        const double vershok = duim * 1.75;
+        const double ladon = cmeter * 7.5;
+        const double chet = vershok * 4;
+        const double arshin = vershok * 16;
+        const double pyad = cmeter * 17.78;
+        const double fut = duim * 12;
+        const double lokot = ladon * 6;
+        const double shag = cmeter * 71;
+        const double mahovaya_sagen = vershok * 40;
+        const double kosaya_sagen = meter * 2.48;
+        const double kazennaya_sagen = duim * 84;
+        const double shest = kazennaya_sagen * 10;
+        const double cep = kazennaya_sagen * 50;
+        const double versta = mahovaya_sagen * 500;
+        const double rus_mile = versta * 7;
+        const double poprische = versta;
+
+
+
+
+        #endregion
+
         public MainForm()
         {
             InitializeComponent();
@@ -187,7 +214,15 @@ namespace Converter
             {
                 m1 = Measure[cbActualFrom.Text];
                 m2 = Measure[cbActualTo.Text];
-                n = Convert.ToDouble(tbActualFrom.Text);
+                try
+                {
+                    n = Convert.ToDouble(tbActualFrom.Text);
+                }
+                catch
+                {
+                    n = 1;
+                    tbActualFrom.Text = n.ToString();
+                }
                 tbActualTo.Text = (n * m1 / m2).ToString();
             }
             //  конвертация мер температуры 
