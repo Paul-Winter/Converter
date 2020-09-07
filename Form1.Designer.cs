@@ -235,11 +235,12 @@
             "Объем жидких тел (винные меры)",
             "Объем сыпучих тел (хлебные меры)",
             "Площадь"});
-            this.cbRussianMeasure.Location = new System.Drawing.Point(124, 73);
+            this.cbRussianMeasure.Location = new System.Drawing.Point(93, 54);
             this.cbRussianMeasure.Name = "cbRussianMeasure";
-            this.cbRussianMeasure.Size = new System.Drawing.Size(121, 21);
+            this.cbRussianMeasure.Size = new System.Drawing.Size(197, 21);
             this.cbRussianMeasure.TabIndex = 13;
             this.cbRussianMeasure.Text = "Длина";
+            this.cbRussianMeasure.SelectedIndexChanged += new System.EventHandler(this.cbRussianMeasure_SelectedIndexChanged);
             // 
             // tbRussianTo
             // 
@@ -257,6 +258,8 @@
             this.tbRussianFrom.Name = "tbRussianFrom";
             this.tbRussianFrom.Size = new System.Drawing.Size(100, 20);
             this.tbRussianFrom.TabIndex = 11;
+            this.tbRussianFrom.Text = "1";
+            this.tbRussianFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbRussianTo
             // 
@@ -282,6 +285,7 @@
             this.btnRussianSwap.TabIndex = 8;
             this.btnRussianSwap.Text = "swap";
             this.btnRussianSwap.UseVisualStyleBackColor = true;
+            this.btnRussianSwap.Click += new System.EventHandler(this.btnRussianSwap_Click);
             // 
             // btnRussianConvert
             // 
@@ -291,6 +295,7 @@
             this.btnRussianConvert.TabIndex = 7;
             this.btnRussianConvert.Text = "convert";
             this.btnRussianConvert.UseVisualStyleBackColor = true;
+            this.btnRussianConvert.Click += new System.EventHandler(this.btnRussianConvert_Click);
             // 
             // tpImperial
             // 
@@ -325,6 +330,7 @@
             this.cbImperialMeasure.Size = new System.Drawing.Size(121, 21);
             this.cbImperialMeasure.TabIndex = 13;
             this.cbImperialMeasure.Text = "Длина";
+            this.cbImperialMeasure.SelectedIndexChanged += new System.EventHandler(this.cbImperialMeasure_SelectedIndexChanged);
             // 
             // tbImperialTo
             // 
@@ -342,6 +348,8 @@
             this.tbImperialFrom.Name = "tbImperialFrom";
             this.tbImperialFrom.Size = new System.Drawing.Size(100, 20);
             this.tbImperialFrom.TabIndex = 11;
+            this.tbImperialFrom.Text = "1";
+            this.tbImperialFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbImperialTo
             // 
@@ -367,6 +375,7 @@
             this.btnImperialSwap.TabIndex = 8;
             this.btnImperialSwap.Text = "swap";
             this.btnImperialSwap.UseVisualStyleBackColor = true;
+            this.btnImperialSwap.Click += new System.EventHandler(this.btnImperialSwap_Click);
             // 
             // btnImperialConvert
             // 
@@ -376,6 +385,7 @@
             this.btnImperialConvert.TabIndex = 7;
             this.btnImperialConvert.Text = "convert";
             this.btnImperialConvert.UseVisualStyleBackColor = true;
+            this.btnImperialConvert.Click += new System.EventHandler(this.btnImperialConvert_Click);
             // 
             // tpJapanese
             // 
@@ -406,6 +416,7 @@
             this.cbJapaneseMeasure.Size = new System.Drawing.Size(121, 21);
             this.cbJapaneseMeasure.TabIndex = 13;
             this.cbJapaneseMeasure.Text = "Длина";
+            this.cbJapaneseMeasure.SelectedIndexChanged += new System.EventHandler(this.cbJapaneseMeasure_SelectedIndexChanged);
             // 
             // tbJapaneseTo
             // 
@@ -423,6 +434,8 @@
             this.tbJapaneseFrom.Name = "tbJapaneseFrom";
             this.tbJapaneseFrom.Size = new System.Drawing.Size(100, 20);
             this.tbJapaneseFrom.TabIndex = 11;
+            this.tbJapaneseFrom.Text = "1";
+            this.tbJapaneseFrom.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cbJapaneseTo
             // 
@@ -448,6 +461,7 @@
             this.btnJapaneseSwap.TabIndex = 8;
             this.btnJapaneseSwap.Text = "swap";
             this.btnJapaneseSwap.UseVisualStyleBackColor = true;
+            this.btnJapaneseSwap.Click += new System.EventHandler(this.btnJapaneseSwap_Click);
             // 
             // btnJapaneseConvert
             // 
@@ -457,6 +471,7 @@
             this.btnJapaneseConvert.TabIndex = 7;
             this.btnJapaneseConvert.Text = "convert";
             this.btnJapaneseConvert.UseVisualStyleBackColor = true;
+            this.btnJapaneseConvert.Click += new System.EventHandler(this.btnJapaneseConvert_Click);
             // 
             // tpAboutProgram
             // 

@@ -212,6 +212,51 @@ namespace Converter
 
         #endregion
 
+        #region имперские меры
+
+        //  имперские меры длины
+
+
+        //  имперские меры массы (американские)
+
+
+        //  имперские меры массы(британские)
+
+
+        //  имперские меры объёма жидких тел(американские)
+
+
+        //  имперские меры объёма сыпучих тел(британские)
+
+
+        //  имперские меры объёма сыпучих тел(американские)
+
+
+        //  имперские меры объёма сыпучих тел(британские)
+
+
+        //  имперские меры площади
+
+
+        #endregion
+
+        #region японские меры
+
+        //  японские меры длины
+
+
+        //  японские меры массы
+
+
+        //  японские меры объёма
+
+
+        //  японские меры площади
+
+
+        #endregion
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -258,6 +303,7 @@ namespace Converter
 
             #endregion
         }
+
 
         /// <summary>
         /// Метод кнопки конвертации.
@@ -318,10 +364,9 @@ namespace Converter
                 }
             }
         }
-
         /// <summary>
         /// Метод кнопки замены.
-        /// Меняет местами современные меры.
+        /// Меняет местами современные меры
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -330,8 +375,7 @@ namespace Converter
             string temp = cbActualFrom.Text;
             cbActualFrom.Text = cbActualTo.Text;
             cbActualTo.Text = temp;
-        }
-        
+        }        
         /// <summary>
         /// Метод работает со списком современных мер
         /// </summary>
@@ -743,6 +787,99 @@ namespace Converter
 
                 #endregion
             }
+        }
+
+
+        /// <summary>
+        /// Метод кнопки конвертации.
+        /// Конвертирует старорусские меры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRussianConvert_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Метод кнопки замены.
+        /// Меняет местами старорусские меры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRussianSwap_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Метод работает со списком старорусских мер
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbRussianMeasure_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// Метод кнопки конвертации.
+        /// Конвертирует имперские меры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImperialConvert_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Метод кнопки замены.
+        /// Меняет местами имперские меры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnImperialSwap_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Метод работает со списком имперских мер
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbImperialMeasure_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// Метод конвертации.
+        /// Конвертирует японские меры
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnJapaneseConvert_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Метод кнопки замены.
+        /// Меняет местами японские меры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnJapaneseSwap_Click(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// Метод работает со списком японских мер
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbJapaneseMeasure_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
