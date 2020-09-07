@@ -13,7 +13,15 @@ namespace Converter
     public partial class MainForm : Form
     {
         Dictionary<string, double> measure;
+        Dictionary<string, double> russian_measure;
+        Dictionary<string, double> imperial_measure;
+        Dictionary<string, double> japanese_measure;
+
         public Dictionary<string, double> Measure { get => measure; set => measure = value; }
+        public Dictionary<string, double> Russian_measure { get => russian_measure; set => russian_measure = value; }
+        public Dictionary<string, double> Imperial_measure { get => imperial_measure; set => imperial_measure = value; }
+        public Dictionary<string, double> Japanese_measure { get => japanese_measure; set => japanese_measure = value; }
+
         const double unit = 1;
         static double m1, m2, n;
 
@@ -370,6 +378,10 @@ namespace Converter
             Measure.Add("километр", kmeter);
             Measure.Add("миля", mile);
             Measure.Add("морская миля", nautical_mile);
+
+            Russian_measure.Add("", mmeter);
+            Russian_measure.Add("", meter);
+
 
             #endregion
 
@@ -892,7 +904,18 @@ namespace Converter
         /// <param name="e"></param>
         private void btnRussianConvert_Click(object sender, EventArgs e)
         {
-
+            m1 = Russian_measure[cbRussianFrom.Text];
+            m2 = Russian_measure[cbRussianTo.Text];
+            try
+            {
+                n = Convert.ToDouble(tbRussianFrom.Text);
+            }
+            catch
+            {
+                n = 1;
+                tbRussianFrom.Text = n.ToString();
+            }
+            tbRussianTo.Text = (n * m1 / m2).ToString();
         }
         /// <summary>
         /// Метод кнопки замены.
@@ -925,7 +948,18 @@ namespace Converter
         /// <param name="e"></param>
         private void btnImperialConvert_Click(object sender, EventArgs e)
         {
-
+            m1 = Imperial_measure[cbImperialFrom.Text];
+            m2 = Imperial_measure[cbImperialTo.Text];
+            try
+            {
+                n = Convert.ToDouble(tbImperialFrom.Text);
+            }
+            catch
+            {
+                n = 1;
+                tbImperialFrom.Text = n.ToString();
+            }
+            tbImperialTo.Text = (n * m1 / m2).ToString();
         }
         /// <summary>
         /// Метод кнопки замены.
@@ -958,7 +992,18 @@ namespace Converter
         /// <param name="e"></param>
         private void btnJapaneseConvert_Click(object sender, EventArgs e)
         {
-
+            m1 = Japanese_measure[cbJapaneseFrom.Text];
+            m2 = Japanese_measure[cbJapaneseTo.Text];
+            try
+            {
+                n = Convert.ToDouble(tbJapaneseFrom.Text);
+            }
+            catch
+            {
+                n = 1;
+                tbJapaneseFrom.Text = n.ToString();
+            }
+            tbJapaneseTo.Text = (n * m1 / m2).ToString();
         }
         /// <summary>
         /// Метод кнопки замены.
