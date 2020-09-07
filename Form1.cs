@@ -12,12 +12,12 @@ namespace Converter
 {
     public partial class MainForm : Form
     {
-        Dictionary<string, double> measure;
+        Dictionary<string, double> actual_measure;
         Dictionary<string, double> russian_measure;
         Dictionary<string, double> imperial_measure;
         Dictionary<string, double> japanese_measure;
 
-        public Dictionary<string, double> Measure { get => measure; set => measure = value; }
+        public Dictionary<string, double> Actual_measure { get => actual_measure; set => actual_measure = value; }
         public Dictionary<string, double> Russian_measure { get => russian_measure; set => russian_measure = value; }
         public Dictionary<string, double> Imperial_measure { get => imperial_measure; set => imperial_measure = value; }
         public Dictionary<string, double> Japanese_measure { get => japanese_measure; set => japanese_measure = value; }
@@ -363,7 +363,7 @@ namespace Converter
         {
             InitializeComponent();
 
-            Measure = new Dictionary<string, double>();
+            Actual_measure = new Dictionary<string, double>();
             Russian_measure = new Dictionary<string, double>();
             Imperial_measure = new Dictionary<string, double>();
             Japanese_measure = new Dictionary<string, double>();
@@ -395,17 +395,17 @@ namespace Converter
             //  Начальная инициализация мер:
             #region современных
 
-            Measure.Add("микрометр", mkmeter);
-            Measure.Add("миллиметр", mmeter);
-            Measure.Add("сантиметр", cmeter);
-            Measure.Add("дюйм", inch);
-            Measure.Add("дециметр", dmeter);
-            Measure.Add("фут", foot);
-            Measure.Add("ярд", yard);
-            Measure.Add("метр", meter);
-            Measure.Add("километр", kmeter);
-            Measure.Add("миля", mile);
-            Measure.Add("морская миля", nautical_mile);
+            Actual_measure.Add("микрометр", mkmeter);
+            Actual_measure.Add("миллиметр", mmeter);
+            Actual_measure.Add("сантиметр", cmeter);
+            Actual_measure.Add("дюйм", inch);
+            Actual_measure.Add("дециметр", dmeter);
+            Actual_measure.Add("фут", foot);
+            Actual_measure.Add("ярд", yard);
+            Actual_measure.Add("метр", meter);
+            Actual_measure.Add("километр", kmeter);
+            Actual_measure.Add("миля", mile);
+            Actual_measure.Add("морская миля", nautical_mile);
 
             #endregion
 
@@ -461,8 +461,8 @@ namespace Converter
             //  конвертация всех мер, кроме температуры
             if (cbActualMeasure.Text != "Температура")
             {
-                m1 = Measure[cbActualFrom.Text];
-                m2 = Measure[cbActualTo.Text];
+                m1 = Actual_measure[cbActualFrom.Text];
+                m2 = Actual_measure[cbActualTo.Text];
                 try
                 {
                     n = Convert.ToDouble(tbActualFrom.Text);
@@ -533,18 +533,18 @@ namespace Converter
                 #region Время
 
                 case "Время":
-                    Measure.Clear();
-                    Measure.Add("наносекунда", nsec);
-                    Measure.Add("микросекунда", mksec);
-                    Measure.Add("миллисекунда", msec);
-                    Measure.Add("секунда", sec);
-                    Measure.Add("минута", min);
-                    Measure.Add("час", hour);
-                    Measure.Add("сутки", day);
-                    Measure.Add("неделя", week);
-                    Measure.Add("месяц", month);
-                    Measure.Add("год", year);
-                    Measure.Add("век", century);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("наносекунда", nsec);
+                    Actual_measure.Add("микросекунда", mksec);
+                    Actual_measure.Add("миллисекунда", msec);
+                    Actual_measure.Add("секунда", sec);
+                    Actual_measure.Add("минута", min);
+                    Actual_measure.Add("час", hour);
+                    Actual_measure.Add("сутки", day);
+                    Actual_measure.Add("неделя", week);
+                    Actual_measure.Add("месяц", month);
+                    Actual_measure.Add("год", year);
+                    Actual_measure.Add("век", century);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("наносекунда");
@@ -581,12 +581,12 @@ namespace Converter
                 #region Давление
 
                 case "Давление":
-                    Measure.Clear();
-                    Measure.Add("Паскаль", pascal);
-                    Measure.Add("бар", bar);
-                    Measure.Add("атмосфера", atm);
-                    Measure.Add("торр", torr);
-                    Measure.Add("фунт-сила на квадратный дюйм", poundStrengthOnSqInch);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("Паскаль", pascal);
+                    Actual_measure.Add("бар", bar);
+                    Actual_measure.Add("атмосфера", atm);
+                    Actual_measure.Add("торр", torr);
+                    Actual_measure.Add("фунт-сила на квадратный дюйм", poundStrengthOnSqInch);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("Паскаль");
@@ -611,18 +611,18 @@ namespace Converter
                 #region Длина
 
                 case "Длина":
-                    Measure.Clear();
-                    Measure.Add("микрометр", mkmeter);
-                    Measure.Add("миллиметр", mmeter);
-                    Measure.Add("сантиметр", cmeter);
-                    Measure.Add("дюйм", inch);
-                    Measure.Add("дециметр", dmeter);
-                    Measure.Add("фут", foot);
-                    Measure.Add("ярд", yard);
-                    Measure.Add("метр", meter);
-                    Measure.Add("километр", kmeter);
-                    Measure.Add("миля", mile);
-                    Measure.Add("морская миля", nautical_mile);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("микрометр", mkmeter);
+                    Actual_measure.Add("миллиметр", mmeter);
+                    Actual_measure.Add("сантиметр", cmeter);
+                    Actual_measure.Add("дюйм", inch);
+                    Actual_measure.Add("дециметр", dmeter);
+                    Actual_measure.Add("фут", foot);
+                    Actual_measure.Add("ярд", yard);
+                    Actual_measure.Add("метр", meter);
+                    Actual_measure.Add("километр", kmeter);
+                    Actual_measure.Add("миля", mile);
+                    Actual_measure.Add("морская миля", nautical_mile);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("микрометр");
@@ -659,25 +659,25 @@ namespace Converter
                 #region Информация
 
                 case "Информация":
-                    Measure.Clear();
-                    Measure.Add("бит", bit);
-                    Measure.Add("байт", @byte);
-                    Measure.Add("килобит", kbit);
-                    Measure.Add("кибибит", kibibit);
-                    Measure.Add("килобайт", kbyte);
-                    Measure.Add("кибибайт", kibibyte);
-                    Measure.Add("мегабит", mbit);
-                    Measure.Add("мебибит", mebibit);
-                    Measure.Add("мегабайт", mbyte);
-                    Measure.Add("мебибайт", mebibyte);
-                    Measure.Add("гигабит", gbit);
-                    Measure.Add("гибибит", gibibit);
-                    Measure.Add("гигабайт", gbyte);
-                    Measure.Add("гибибайт", gibibyte);
-                    Measure.Add("терабит", tbit);
-                    Measure.Add("тебибит", tebibit);
-                    Measure.Add("терабайт", tbyte);
-                    Measure.Add("тебибайт", tebibyte);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("бит", bit);
+                    Actual_measure.Add("байт", @byte);
+                    Actual_measure.Add("килобит", kbit);
+                    Actual_measure.Add("кибибит", kibibit);
+                    Actual_measure.Add("килобайт", kbyte);
+                    Actual_measure.Add("кибибайт", kibibyte);
+                    Actual_measure.Add("мегабит", mbit);
+                    Actual_measure.Add("мебибит", mebibit);
+                    Actual_measure.Add("мегабайт", mbyte);
+                    Actual_measure.Add("мебибайт", mebibyte);
+                    Actual_measure.Add("гигабит", gbit);
+                    Actual_measure.Add("гибибит", gibibit);
+                    Actual_measure.Add("гигабайт", gbyte);
+                    Actual_measure.Add("гибибайт", gibibyte);
+                    Actual_measure.Add("терабит", tbit);
+                    Actual_measure.Add("тебибит", tebibit);
+                    Actual_measure.Add("терабайт", tbyte);
+                    Actual_measure.Add("тебибайт", tebibyte);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("бит");
@@ -728,17 +728,17 @@ namespace Converter
                 #region Масса
 
                 case "Масса":
-                    Measure.Clear();
-                    Measure.Add("микрограмм", mkgram);
-                    Measure.Add("миллиграмм", mgram);
-                    Measure.Add("грамм", gram);
-                    Measure.Add("унция", ounce);
-                    Measure.Add("фунт", pound);
-                    Measure.Add("килограмм", kgram);
-                    Measure.Add("стон", stone);
-                    Measure.Add("тонна", ton);
-                    Measure.Add("американская тонна", american_ton);
-                    Measure.Add("английская тонна", british_ton);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("микрограмм", mkgram);
+                    Actual_measure.Add("миллиграмм", mgram);
+                    Actual_measure.Add("грамм", gram);
+                    Actual_measure.Add("унция", ounce);
+                    Actual_measure.Add("фунт", pound);
+                    Actual_measure.Add("килограмм", kgram);
+                    Actual_measure.Add("стон", stone);
+                    Actual_measure.Add("тонна", ton);
+                    Actual_measure.Add("американская тонна", american_ton);
+                    Actual_measure.Add("английская тонна", british_ton);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("микрограмм");
@@ -773,13 +773,13 @@ namespace Converter
                 #region Объём
 
                 case "Объём":
-                    Measure.Clear();
-                    Measure.Add("миллилитр", mliter);
-                    Measure.Add("кубический дюйм", cubInch);
-                    Measure.Add("литр", liter);
-                    Measure.Add("галлон (американский)", gallon_american);
-                    Measure.Add("кубический фут", cubFoot);
-                    Measure.Add("кубический метр", cubMeter);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("миллилитр", mliter);
+                    Actual_measure.Add("кубический дюйм", cubInch);
+                    Actual_measure.Add("литр", liter);
+                    Actual_measure.Add("галлон (американский)", gallon_american);
+                    Actual_measure.Add("кубический фут", cubFoot);
+                    Actual_measure.Add("кубический метр", cubMeter);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("миллилитр");
@@ -806,16 +806,16 @@ namespace Converter
                 #region Площадь
 
                 case "Площадь":
-                    Measure.Clear();
-                    Measure.Add("квадратный дюйм", sqInch);
-                    Measure.Add("квадратный фут", sqFoot);
-                    Measure.Add("квадратный ярд", sqYard);
-                    Measure.Add("квадратный метр", sqMeter);
-                    Measure.Add("ар", ar);
-                    Measure.Add("акр", akr);
-                    Measure.Add("гектар", gectar);
-                    Measure.Add("квадратный километр", sqKmeter);
-                    Measure.Add("квадратная миля", sqMile);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("квадратный дюйм", sqInch);
+                    Actual_measure.Add("квадратный фут", sqFoot);
+                    Actual_measure.Add("квадратный ярд", sqYard);
+                    Actual_measure.Add("квадратный метр", sqMeter);
+                    Actual_measure.Add("ар", ar);
+                    Actual_measure.Add("акр", akr);
+                    Actual_measure.Add("гектар", gectar);
+                    Actual_measure.Add("квадратный километр", sqKmeter);
+                    Actual_measure.Add("квадратная миля", sqMile);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("квадратный дюйм");
@@ -848,12 +848,12 @@ namespace Converter
                 #region Скорость
 
                 case "Скорость":
-                    Measure.Clear();
-                    Measure.Add("метр в секунду", meterPerSecond);
-                    Measure.Add("фут в секунду", footPerSecond);
-                    Measure.Add("километр в час", kmeterPerHour);
-                    Measure.Add("миля в час", milePerHour);
-                    Measure.Add("узел", knot);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("метр в секунду", meterPerSecond);
+                    Actual_measure.Add("фут в секунду", footPerSecond);
+                    Actual_measure.Add("километр в час", kmeterPerHour);
+                    Actual_measure.Add("миля в час", milePerHour);
+                    Actual_measure.Add("узел", knot);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("метр в секунду");
@@ -878,10 +878,10 @@ namespace Converter
                 #region Температура
 
                 case "Температура":
-                    Measure.Clear();
-                    Measure.Add("градус Цельсия", celsius);
-                    Measure.Add("градус Фаренгейта", farenheit);
-                    Measure.Add("градус Кельвина", kelvin);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("градус Цельсия", celsius);
+                    Actual_measure.Add("градус Фаренгейта", farenheit);
+                    Actual_measure.Add("градус Кельвина", kelvin);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("градус Цельсия");
@@ -902,13 +902,13 @@ namespace Converter
                 #region Энергия
 
                 case "Энергия":
-                    Measure.Clear();
-                    Measure.Add("Джоуль", joule);
-                    Measure.Add("грамм-калория", gram_calorie);
-                    Measure.Add("килокалория", kcalorie);
-                    Measure.Add("килоджоуль", kjoule);
-                    Measure.Add("Ватт-час", watt_hour);
-                    Measure.Add("киловатт-час", kWatt_hour);
+                    Actual_measure.Clear();
+                    Actual_measure.Add("Джоуль", joule);
+                    Actual_measure.Add("грамм-калория", gram_calorie);
+                    Actual_measure.Add("килокалория", kcalorie);
+                    Actual_measure.Add("килоджоуль", kjoule);
+                    Actual_measure.Add("Ватт-час", watt_hour);
+                    Actual_measure.Add("киловатт-час", kWatt_hour);
 
                     cbActualFrom.Items.Clear();
                     cbActualFrom.Items.Add("Джоуль");
@@ -1050,9 +1050,67 @@ namespace Converter
                     cbRussianTo.Text = "миллиметр";
                     break;
 
+                #endregion
+
+                #region Длина
+
+                case "Масса":
+                    Russian_measure.Clear();
+                    Russian_measure.Add("грамм", gram);
+                    Russian_measure.Add("килограмм", kgram);
+                    Russian_measure.Add("доля", dolya);
+                    Russian_measure.Add("золотник", zolotnik);
+                    Russian_measure.Add("лот", lot);
+                    Russian_measure.Add("гривенка", grivenka);
+                    Russian_measure.Add("фунт", funt);
+                    Russian_measure.Add("гривна", grivna);
+                    Russian_measure.Add("батман", batman);
+                    Russian_measure.Add("пуд", pud);
+                    Russian_measure.Add("полпуда", polpuda);
+                    Russian_measure.Add("кантар", kantar);
+                    Russian_measure.Add("берковец", berkovec);
+                    Russian_measure.Add("четверть вощаная", chetvert_voschanaya);
+                    Russian_measure.Add("ласт", last);
+
+                    cbRussianFrom.Items.Clear();
+                    cbRussianFrom.Items.Add("грамм");
+                    cbRussianFrom.Items.Add("килограмм");
+                    cbRussianFrom.Items.Add("доля");
+                    cbRussianFrom.Items.Add("золотник");
+                    cbRussianFrom.Items.Add("лот");
+                    cbRussianFrom.Items.Add("гривенка");
+                    cbRussianFrom.Items.Add("фунт");
+                    cbRussianFrom.Items.Add("гривна");
+                    cbRussianFrom.Items.Add("батман");
+                    cbRussianFrom.Items.Add("пуд");
+                    cbRussianFrom.Items.Add("полпуда");
+                    cbRussianFrom.Items.Add("кантар");
+                    cbRussianFrom.Items.Add("берковец");
+                    cbRussianFrom.Items.Add("четверть вощаная");
+                    cbRussianFrom.Items.Add("ласт");
+
+                    cbRussianTo.Items.Clear();
+                    cbRussianTo.Items.Add("грамм");
+                    cbRussianTo.Items.Add("килограмм");
+                    cbRussianTo.Items.Add("доля");
+                    cbRussianTo.Items.Add("золотник");
+                    cbRussianTo.Items.Add("лот");
+                    cbRussianTo.Items.Add("гривенка");
+                    cbRussianTo.Items.Add("фунт");
+                    cbRussianTo.Items.Add("гривна");
+                    cbRussianTo.Items.Add("батман");
+                    cbRussianTo.Items.Add("пуд");
+                    cbRussianTo.Items.Add("полпуда");
+                    cbRussianTo.Items.Add("кантар");
+                    cbRussianTo.Items.Add("берковец");
+                    cbRussianTo.Items.Add("четверть вощаная");
+                    cbRussianTo.Items.Add("ласт");
+
+                    cbRussianFrom.Text = "килограмм";
+                    cbRussianTo.Text = "грамм";
+                    break;
+
                     #endregion
-
-
             }
         }
 
