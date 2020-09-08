@@ -1124,6 +1124,7 @@ namespace Converter
                     Russian_measure.Add("кубическая линия", cubLinia);
                     Russian_measure.Add("кубический метр", cubMmeter);
                     Russian_measure.Add("литр", liter);
+                    Russian_measure.Add("миллилитр", mliter);
 
                     cbRussianFrom.Items.Clear();
                     cbRussianFrom.Items.Add("кубическая сажень");
@@ -1134,6 +1135,7 @@ namespace Converter
                     cbRussianFrom.Items.Add("кубическая линия");
                     cbRussianFrom.Items.Add("кубический метр");
                     cbRussianFrom.Items.Add("литр");
+                    cbRussianFrom.Items.Add("миллилитр");
 
                     cbRussianTo.Items.Clear();
                     cbRussianTo.Items.Add("кубическая сажень");
@@ -1144,9 +1146,10 @@ namespace Converter
                     cbRussianTo.Items.Add("кубическая линия");
                     cbRussianTo.Items.Add("кубический метр");
                     cbRussianTo.Items.Add("литр");
+                    cbRussianTo.Items.Add("миллилитр");
 
-                    cbRussianFrom.Text = "кубический метр";
-                    cbRussianTo.Text = "литр";
+                    cbRussianFrom.Text = "литр";
+                    cbRussianTo.Text = "миллилитр";
                     break;
 
                 #endregion
@@ -1155,40 +1158,62 @@ namespace Converter
 
                 case "Объём жидких тел (винные меры)":
                     Russian_measure.Clear();
-                    Russian_measure.Add("кубическая сажень", cubSagen);
-                    Russian_measure.Add("кубический аршин", cubArshin);
-                    Russian_measure.Add("кубический вершок", cubVershok);
-                    Russian_measure.Add("кубический фут", cubFut);
-                    Russian_measure.Add("кубический дюйм", cubDuim);
-                    Russian_measure.Add("кубическая линия", cubLinia);
-                    Russian_measure.Add("кубический метр", cubMmeter);
+                    Russian_measure.Add("шкалик", shkalik);
+                    Russian_measure.Add("чарка", charka);
+                    Russian_measure.Add("четушка", chetushka);
+                    Russian_measure.Add("стакан", stakan);
+                    Russian_measure.Add("косушка", kosushka);
+                    Russian_measure.Add("бутылка водки", butilka_vodki);
+                    Russian_measure.Add("бутылка вина", butilka_vina);
+                    Russian_measure.Add("штоф", shtof);
+                    Russian_measure.Add("гарнец", garnec);
+                    Russian_measure.Add("четверть ведра", chetvert_vedra);
+                    Russian_measure.Add("ведро", vedro);
+                    Russian_measure.Add("корчага", korchaga);
+                    Russian_measure.Add("бочка", bochka);
                     Russian_measure.Add("литр", liter);
+                    Russian_measure.Add("миллилитр", mliter);
 
                     cbRussianFrom.Items.Clear();
-                    cbRussianFrom.Items.Add("кубическая сажень");
-                    cbRussianFrom.Items.Add("кубический аршин");
-                    cbRussianFrom.Items.Add("кубический вершок");
-                    cbRussianFrom.Items.Add("кубический фут");
-                    cbRussianFrom.Items.Add("кубический дюйм");
-                    cbRussianFrom.Items.Add("кубическая линия");
-                    cbRussianFrom.Items.Add("кубический метр");
+                    cbRussianFrom.Items.Add("шкалик");
+                    cbRussianFrom.Items.Add("чарка");
+                    cbRussianFrom.Items.Add("четушка");
+                    cbRussianFrom.Items.Add("стакан");
+                    cbRussianFrom.Items.Add("косушка");
+                    cbRussianFrom.Items.Add("бутылка водки");
+                    cbRussianFrom.Items.Add("бутылка вина");
+                    cbRussianFrom.Items.Add("штоф");
+                    cbRussianFrom.Items.Add("гарнец");
+                    cbRussianFrom.Items.Add("четверть ведра");
+                    cbRussianFrom.Items.Add("ведро");
+                    cbRussianFrom.Items.Add("корчага");
+                    cbRussianFrom.Items.Add("бочка");
                     cbRussianFrom.Items.Add("литр");
+                    cbRussianFrom.Items.Add("миллилитр");
 
                     cbRussianTo.Items.Clear();
-                    cbRussianTo.Items.Add("кубическая сажень");
-                    cbRussianTo.Items.Add("кубический аршин");
-                    cbRussianTo.Items.Add("кубический вершок");
-                    cbRussianTo.Items.Add("кубический фут");
-                    cbRussianTo.Items.Add("кубический дюйм");
-                    cbRussianTo.Items.Add("кубическая линия");
-                    cbRussianTo.Items.Add("кубический метр");
+                    cbRussianTo.Items.Add("шкалик");
+                    cbRussianTo.Items.Add("чарка");
+                    cbRussianTo.Items.Add("четушка");
+                    cbRussianTo.Items.Add("стакан");
+                    cbRussianTo.Items.Add("косушка");
+                    cbRussianTo.Items.Add("бутылка водки");
+                    cbRussianTo.Items.Add("бутылка вина");
+                    cbRussianTo.Items.Add("штоф");
+                    cbRussianTo.Items.Add("гарнец");
+                    cbRussianTo.Items.Add("четверть ведра");
+                    cbRussianTo.Items.Add("ведро");
+                    cbRussianTo.Items.Add("корчага");
+                    cbRussianTo.Items.Add("бочка");
                     cbRussianTo.Items.Add("литр");
+                    cbRussianTo.Items.Add("миллилитр");
 
-                    cbRussianFrom.Text = "кубический метр";
-                    cbRussianTo.Text = "литр";
+                    cbRussianFrom.Text = "литр";
+                    cbRussianTo.Text = "миллилитр";
                     break;
 
                     #endregion
+
                     //Объём жидких тел (винные меры)
                     //Объём сыпучих тел (хлебные меры)
                     //Площадь
