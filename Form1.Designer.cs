@@ -484,18 +484,42 @@
             // cbJapaneseTo
             // 
             this.cbJapaneseTo.FormattingEnabled = true;
+            this.cbJapaneseTo.Items.AddRange(new object[] {
+            "бу",
+            "сун",
+            "сяку",
+            "кэн",
+            "хиро",
+            "дзё",
+            "те",
+            "ри",
+            "метр",
+            "миллиметр"});
             this.cbJapaneseTo.Location = new System.Drawing.Point(248, 129);
             this.cbJapaneseTo.Name = "cbJapaneseTo";
             this.cbJapaneseTo.Size = new System.Drawing.Size(121, 21);
             this.cbJapaneseTo.TabIndex = 10;
+            this.cbJapaneseTo.Text = "миллиметр";
             // 
             // cbJapaneseFrom
             // 
             this.cbJapaneseFrom.FormattingEnabled = true;
+            this.cbJapaneseFrom.Items.AddRange(new object[] {
+            "бу",
+            "сун",
+            "сяку",
+            "кэн",
+            "хиро",
+            "дзё",
+            "те",
+            "ри",
+            "метр",
+            "миллиметр"});
             this.cbJapaneseFrom.Location = new System.Drawing.Point(7, 129);
             this.cbJapaneseFrom.Name = "cbJapaneseFrom";
             this.cbJapaneseFrom.Size = new System.Drawing.Size(121, 21);
             this.cbJapaneseFrom.TabIndex = 9;
+            this.cbJapaneseFrom.Text = "метр";
             // 
             // btnJapaneseSwap
             // 

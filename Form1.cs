@@ -443,8 +443,17 @@ namespace Converter
 
             #region японских
 
-            Japanese_measure.Add("миллиметр", mmeter);
+            Japanese_measure.Clear();
+            Japanese_measure.Add("бу", bu);
+            Japanese_measure.Add("сун", sun);
+            Japanese_measure.Add("сяку", syaku);
+            Japanese_measure.Add("кэн", ken);
+            Japanese_measure.Add("хиро", hiro);
+            Japanese_measure.Add("дзё", dze);
+            Japanese_measure.Add("те", te);
+            Japanese_measure.Add("ри", ri);
             Japanese_measure.Add("метр", meter);
+            Japanese_measure.Add("миллиметр", mmeter);
 
             #endregion
         }
@@ -1512,11 +1521,50 @@ namespace Converter
                     cbJapaneseTo.Text = "миллилитр";
                     break;
 
+                #endregion
+
+                #region Площадь
+
+                case "Площадь":
+                    Japanese_measure.Clear();
+                    Japanese_measure.Add("кэн", sqKen);
+                    Japanese_measure.Add("цубо", tsubo);
+                    Japanese_measure.Add("го", sqGo);
+                    Japanese_measure.Add("дзё", sqDze);
+                    Japanese_measure.Add("унэ", une);
+                    Japanese_measure.Add("тан", tan);
+                    Japanese_measure.Add("те", sqTe);
+                    Japanese_measure.Add("квадратный сантиметр", sqCmeter);
+                    Japanese_measure.Add("квадратный метр", sqMeter);
+
+                    cbJapaneseFrom.Items.Clear();
+                    cbJapaneseFrom.Items.Add("кэн");
+                    cbJapaneseFrom.Items.Add("цубо");
+                    cbJapaneseFrom.Items.Add("го");
+                    cbJapaneseFrom.Items.Add("дзё");
+                    cbJapaneseFrom.Items.Add("унэ");
+                    cbJapaneseFrom.Items.Add("тан");
+                    cbJapaneseFrom.Items.Add("те");
+                    cbJapaneseFrom.Items.Add("квадратный сантиметр");
+                    cbJapaneseFrom.Items.Add("квадратный метр");
+
+                    cbJapaneseTo.Items.Clear();
+                    cbJapaneseTo.Items.Add("кэн");
+                    cbJapaneseTo.Items.Add("цубо");
+                    cbJapaneseTo.Items.Add("го");
+                    cbJapaneseTo.Items.Add("дзё");
+                    cbJapaneseTo.Items.Add("унэ");
+                    cbJapaneseTo.Items.Add("тан");
+                    cbJapaneseTo.Items.Add("те");
+                    cbJapaneseTo.Items.Add("квадратный сантиметр");
+                    cbJapaneseTo.Items.Add("квадратный метр");
+
+                    cbJapaneseFrom.Text = "квадратный метр";
+                    cbJapaneseTo.Text = "квадратный сантиметр";
+                    break;
+
                     #endregion
             }
-
-            //Объём
-            //Площадь
         }
     }
 }
