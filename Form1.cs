@@ -1450,9 +1450,9 @@ namespace Converter
 
                 #endregion
 
-                #region Масса
+                #region Масса (американские)
 
-                case "Масса":
+                case "Масса (американские)":
                     Imperial_measure.Clear();
                     Imperial_measure.Add("квинтал", quintal);
                     Imperial_measure.Add("хандредвейт", hundredweight);
@@ -1467,7 +1467,6 @@ namespace Converter
                     Imperial_measure.Add("тонна американская", american_ton);
                     Imperial_measure.Add("тонна британская", british_ton);
 
-
                     cbImperialFrom.Items.Clear();
                     cbImperialFrom.Items.Add("квинтал");
                     cbImperialFrom.Items.Add("хандредвейт");
@@ -1481,7 +1480,6 @@ namespace Converter
                     cbImperialFrom.Items.Add("тонна");
                     cbImperialFrom.Items.Add("тонна американская");
                     cbImperialFrom.Items.Add("тонна британская");
-
 
                     cbImperialTo.Items.Clear();
                     cbImperialTo.Items.Add("квинтал");
@@ -1501,11 +1499,72 @@ namespace Converter
                     cbImperialTo.Text = "унция";
                     break;
 
+                #endregion
+
+                #region Масса (британские)
+
+                case "Масса (британские)":
+                    Imperial_measure.Clear();
+                    Imperial_measure.Add("тонна длинная", long_ton);
+                    Imperial_measure.Add("тонна короткая", short_ton);
+                    Imperial_measure.Add("киль", kile);
+                    Imperial_measure.Add("челдрон", cheldron);
+                    Imperial_measure.Add("хандредвейт длинный", long_hundredweight);
+                    Imperial_measure.Add("хандредвейт короткий", short_hundredweight);
+                    Imperial_measure.Add("тод", tod);
+                    Imperial_measure.Add("клов", clove);
+                    Imperial_measure.Add("квартерн", quartern);
+                    Imperial_measure.Add("драхм", dram);
+                    Imperial_measure.Add("грэйн", grain);
+                    Imperial_measure.Add("унция", ounce);
+                    Imperial_measure.Add("фунт", pound);
+                    Imperial_measure.Add("килограмм", kgram);
+                    Imperial_measure.Add("тонна", ton);
+                    Imperial_measure.Add("тонна британская", british_ton);
+
+                    cbImperialFrom.Items.Clear();
+                    cbImperialFrom.Items.Add("тонна длинная");
+                    cbImperialFrom.Items.Add("тонна короткая");
+                    cbImperialFrom.Items.Add("киль");
+                    cbImperialFrom.Items.Add("челдрон");
+                    cbImperialFrom.Items.Add("хандредвейт длинный");
+                    cbImperialFrom.Items.Add("хандредвейт короткий");
+                    cbImperialFrom.Items.Add("тод");
+                    cbImperialFrom.Items.Add("клов");
+                    cbImperialFrom.Items.Add("квартерн");
+                    cbImperialFrom.Items.Add("драхм");
+                    cbImperialFrom.Items.Add("грэйн");
+                    cbImperialFrom.Items.Add("унция");
+                    cbImperialFrom.Items.Add("фунт");
+                    cbImperialFrom.Items.Add("килограмм");
+                    cbImperialFrom.Items.Add("тонна");
+                    cbImperialFrom.Items.Add("тонна британская");
+
+                    cbImperialTo.Items.Clear();
+                    cbImperialTo.Items.Add("тонна длинная");
+                    cbImperialTo.Items.Add("тонна короткая");
+                    cbImperialTo.Items.Add("киль");
+                    cbImperialTo.Items.Add("челдрон");
+                    cbImperialTo.Items.Add("хандредвейт длинный");
+                    cbImperialTo.Items.Add("хандредвейт короткий");
+                    cbImperialTo.Items.Add("тод");
+                    cbImperialTo.Items.Add("клов");
+                    cbImperialTo.Items.Add("квартерн");
+                    cbImperialTo.Items.Add("драхм");
+                    cbImperialTo.Items.Add("грэйн");
+                    cbImperialTo.Items.Add("унция");
+                    cbImperialTo.Items.Add("фунт");
+                    cbImperialTo.Items.Add("килограмм");
+                    cbImperialTo.Items.Add("тонна");
+                    cbImperialTo.Items.Add("тонна британская");
+
+                    cbImperialFrom.Text = "фунт";
+                    cbImperialTo.Text = "унция";
+                    break;
+
                     #endregion
             }
 
-            //Масса(американские)
-            //Масса(британские)
             //Объём жидких тел(американские)
             //Объём жидких тел(британские)
             //Объём сыпучих тел(американские)
