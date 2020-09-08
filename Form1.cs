@@ -436,8 +436,25 @@ namespace Converter
 
             #region имперских
 
-            Imperial_measure.Add("миллиметр", mmeter);
+            Imperial_measure.Add("лига", league);
+            Imperial_measure.Add("морская миля", nautical_mile);
+            Imperial_measure.Add("кабельтов британский", cable_british);
+            Imperial_measure.Add("кабельтов американский", cable_american);
+            Imperial_measure.Add("статутная миля", statute_mile);
+            Imperial_measure.Add("фурлонг", furlong);
+            Imperial_measure.Add("чейн", chain);
+            Imperial_measure.Add("род", rod);
+            Imperial_measure.Add("хэнд", hand);
+            Imperial_measure.Add("барлейкорн", barleycorn);
+            Imperial_measure.Add("линия", line);
+            Imperial_measure.Add("точка", point);
+            Imperial_measure.Add("мил", mil);
+            Imperial_measure.Add("дюйм", inch);
+            Imperial_measure.Add("фут", foot);
+            Imperial_measure.Add("ярд", yard);
+            Imperial_measure.Add("миля", mile);
             Imperial_measure.Add("метр", meter);
+            Imperial_measure.Add("километр", kmeter);
 
             #endregion
 
@@ -1359,7 +1376,81 @@ namespace Converter
         /// <param name="e"></param>
         private void cbImperialMeasure_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Длина
+            switch (cbImperialMeasure.Text)
+            {
+                #region Длина
+
+                case "Длина":
+                    Imperial_measure.Clear();
+                    Imperial_measure.Add("лига", league);
+                    Imperial_measure.Add("морская миля", nautical_mile);
+                    Imperial_measure.Add("кабельтов британский", cable_british);
+                    Imperial_measure.Add("кабельтов американский", cable_american);
+                    Imperial_measure.Add("статутная миля", statute_mile);
+                    Imperial_measure.Add("фурлонг", furlong);
+                    Imperial_measure.Add("чейн", chain);
+                    Imperial_measure.Add("род", rod);
+                    Imperial_measure.Add("хэнд", hand);
+                    Imperial_measure.Add("барлейкорн", barleycorn);
+                    Imperial_measure.Add("линия", line);
+                    Imperial_measure.Add("точка", point);
+                    Imperial_measure.Add("мил", mil);
+                    Imperial_measure.Add("дюйм", inch);
+                    Imperial_measure.Add("фут", foot);
+                    Imperial_measure.Add("ярд", yard);
+                    Imperial_measure.Add("миля", mile);
+                    Imperial_measure.Add("метр", meter);
+                    Imperial_measure.Add("километр", kmeter);
+
+                    cbImperialFrom.Items.Clear();
+                    cbImperialFrom.Items.Add("лига");
+                    cbImperialFrom.Items.Add("морская миля");
+                    cbImperialFrom.Items.Add("кабельтов британский");
+                    cbImperialFrom.Items.Add("кабельтов американский");
+                    cbImperialFrom.Items.Add("статутная миля");
+                    cbImperialFrom.Items.Add("фурлонг");
+                    cbImperialFrom.Items.Add("чейн");
+                    cbImperialFrom.Items.Add("род");
+                    cbImperialFrom.Items.Add("хэнд");
+                    cbImperialFrom.Items.Add("барлейкорн");
+                    cbImperialFrom.Items.Add("линия");
+                    cbImperialFrom.Items.Add("точка");
+                    cbImperialFrom.Items.Add("мил");
+                    cbImperialFrom.Items.Add("дюйм");
+                    cbImperialFrom.Items.Add("фут");
+                    cbImperialFrom.Items.Add("ярд");
+                    cbImperialFrom.Items.Add("миля");
+                    cbImperialFrom.Items.Add("метр");
+                    cbImperialFrom.Items.Add("километр");
+
+                    cbImperialTo.Items.Clear();
+                    cbImperialTo.Items.Add("лига");
+                    cbImperialTo.Items.Add("морская миля");
+                    cbImperialTo.Items.Add("кабельтов британский");
+                    cbImperialTo.Items.Add("кабельтов американский");
+                    cbImperialTo.Items.Add("статутная миля");
+                    cbImperialTo.Items.Add("фурлонг");
+                    cbImperialTo.Items.Add("чейн");
+                    cbImperialTo.Items.Add("род");
+                    cbImperialTo.Items.Add("хэнд");
+                    cbImperialTo.Items.Add("барлейкорн");
+                    cbImperialTo.Items.Add("линия");
+                    cbImperialTo.Items.Add("точка");
+                    cbImperialTo.Items.Add("мил");
+                    cbImperialTo.Items.Add("дюйм");
+                    cbImperialTo.Items.Add("фут");
+                    cbImperialTo.Items.Add("ярд");
+                    cbImperialTo.Items.Add("миля");
+                    cbImperialTo.Items.Add("метр");
+                    cbImperialTo.Items.Add("километр");
+
+                    cbImperialFrom.Text = "ярд";
+                    cbImperialTo.Text = "дюйм";
+                    break;
+
+                    #endregion
+            }
+
             //Масса(американские)
             //Масса(британские)
             //Объём жидких тел(американские)

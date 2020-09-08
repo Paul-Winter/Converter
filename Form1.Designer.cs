@@ -398,18 +398,60 @@
             // cbImperialTo
             // 
             this.cbImperialTo.FormattingEnabled = true;
+            this.cbImperialTo.Items.AddRange(new object[] {
+            "лига",
+            "морская миля",
+            "кабельтов британский",
+            "кабельтов американский",
+            "статутная миля",
+            "фурлонг",
+            "чейн",
+            "род",
+            "хэнд",
+            "барлейкорн",
+            "линия",
+            "точка",
+            "мил",
+            "дюйм",
+            "фут",
+            "ярд",
+            "миля",
+            "метр",
+            "километр"});
             this.cbImperialTo.Location = new System.Drawing.Point(247, 129);
             this.cbImperialTo.Name = "cbImperialTo";
             this.cbImperialTo.Size = new System.Drawing.Size(121, 21);
             this.cbImperialTo.TabIndex = 10;
+            this.cbImperialTo.Text = "дюйм";
             // 
             // cbImperialFrom
             // 
             this.cbImperialFrom.FormattingEnabled = true;
+            this.cbImperialFrom.Items.AddRange(new object[] {
+            "лига",
+            "морская миля",
+            "кабельтов британский",
+            "кабельтов американский",
+            "статутная миля",
+            "фурлонг",
+            "чейн",
+            "род",
+            "хэнд",
+            "барлейкорн",
+            "линия",
+            "точка",
+            "мил",
+            "дюйм",
+            "фут",
+            "ярд",
+            "миля",
+            "метр",
+            "километр"});
             this.cbImperialFrom.Location = new System.Drawing.Point(6, 129);
             this.cbImperialFrom.Name = "cbImperialFrom";
             this.cbImperialFrom.Size = new System.Drawing.Size(121, 21);
             this.cbImperialFrom.TabIndex = 9;
+            this.cbImperialFrom.Text = "ярд";
             // 
             // btnImperialSwap
             // 
