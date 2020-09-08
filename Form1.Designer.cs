@@ -369,9 +369,9 @@
             "Объём сыпучих тел (американские)",
             "Объём сыпучих тел (британские)",
             "Площадь"});
-            this.cbImperialMeasure.Location = new System.Drawing.Point(124, 72);
+            this.cbImperialMeasure.Location = new System.Drawing.Point(96, 63);
             this.cbImperialMeasure.Name = "cbImperialMeasure";
-            this.cbImperialMeasure.Size = new System.Drawing.Size(121, 21);
+            this.cbImperialMeasure.Size = new System.Drawing.Size(182, 21);
             this.cbImperialMeasure.TabIndex = 13;
             this.cbImperialMeasure.Text = "Длина";
             this.cbImperialMeasure.SelectedIndexChanged += new System.EventHandler(this.cbImperialMeasure_SelectedIndexChanged);
