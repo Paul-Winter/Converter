@@ -1481,35 +1481,35 @@ namespace Converter
 
                 #endregion
 
-                #region Масса
+                #region Объём
 
-                case "Масса":
+                case "Объём":
                     Japanese_measure.Clear();
-                    Japanese_measure.Add("фун", fun);
-                    Japanese_measure.Add("моммэ", momme);
-                    Japanese_measure.Add("кин", kin);
-                    Japanese_measure.Add("кан", kan);
-                    Japanese_measure.Add("килограмм", kgram);
-                    Japanese_measure.Add("грамм", gram);
+                    Japanese_measure.Add("го", go);
+                    Japanese_measure.Add("сё", se);
+                    Japanese_measure.Add("то", to);
+                    Japanese_measure.Add("коку", koku);
+                    Japanese_measure.Add("литр", liter);
+                    Japanese_measure.Add("миллилитр", mliter);
 
                     cbJapaneseFrom.Items.Clear();
-                    cbJapaneseFrom.Items.Add("фун");
-                    cbJapaneseFrom.Items.Add("моммэ");
-                    cbJapaneseFrom.Items.Add("кин");
-                    cbJapaneseFrom.Items.Add("кан");
-                    cbJapaneseFrom.Items.Add("килограмм");
-                    cbJapaneseFrom.Items.Add("грамм");
+                    cbJapaneseFrom.Items.Add("го");
+                    cbJapaneseFrom.Items.Add("сё");
+                    cbJapaneseFrom.Items.Add("то");
+                    cbJapaneseFrom.Items.Add("коку");
+                    cbJapaneseFrom.Items.Add("литр");
+                    cbJapaneseFrom.Items.Add("миллилитр");
 
                     cbJapaneseTo.Items.Clear();
-                    cbJapaneseTo.Items.Add("фун");
-                    cbJapaneseTo.Items.Add("моммэ");
-                    cbJapaneseTo.Items.Add("кин");
-                    cbJapaneseTo.Items.Add("кан");
-                    cbJapaneseTo.Items.Add("килограмм");
-                    cbJapaneseTo.Items.Add("грамм");
+                    cbJapaneseTo.Items.Add("го");
+                    cbJapaneseTo.Items.Add("сё");
+                    cbJapaneseTo.Items.Add("то");
+                    cbJapaneseTo.Items.Add("коку");
+                    cbJapaneseTo.Items.Add("литр");
+                    cbJapaneseTo.Items.Add("миллилитр");
 
-                    cbJapaneseFrom.Text = "килограмм";
-                    cbJapaneseTo.Text = "грамм";
+                    cbJapaneseFrom.Text = "литр";
+                    cbJapaneseTo.Text = "миллилитр";
                     break;
 
                     #endregion
