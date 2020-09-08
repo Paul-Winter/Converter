@@ -1212,11 +1212,100 @@ namespace Converter
                     cbRussianTo.Text = "миллилитр";
                     break;
 
-                    #endregion
+                #endregion
 
-                    //Объём жидких тел (винные меры)
-                    //Объём сыпучих тел (хлебные меры)
-                    //Площадь
+                #region Объём сыпучих тел
+
+                case "Объём сыпучих тел (хлебные меры)":
+                    Russian_measure.Clear();
+                    Russian_measure.Add("полугарнец", polugarnec);
+                    Russian_measure.Add("четверка", chetverka);
+                    Russian_measure.Add("получетверик", poluchetverik);
+                    Russian_measure.Add("четверик", chetverik);
+                    Russian_measure.Add("мера", mera);
+                    Russian_measure.Add("полосьмины", polosminy);
+                    Russian_measure.Add("осьмина", osmina);
+                    Russian_measure.Add("четь сыпучая", chet_sip);
+                    Russian_measure.Add("половник", polovnik);
+                    Russian_measure.Add("кадка", kadka);
+                    Russian_measure.Add("литр", liter);
+                    Russian_measure.Add("миллилитр", mliter);
+
+                    cbRussianFrom.Items.Clear();
+                    cbRussianFrom.Items.Add("полугарнец");
+                    cbRussianFrom.Items.Add("четверка");
+                    cbRussianFrom.Items.Add("получетверик");
+                    cbRussianFrom.Items.Add("четверик");
+                    cbRussianFrom.Items.Add("мера");
+                    cbRussianFrom.Items.Add("полосьмины");
+                    cbRussianFrom.Items.Add("осьмина");
+                    cbRussianFrom.Items.Add("четь сыпучая");
+                    cbRussianFrom.Items.Add("половник");
+                    cbRussianFrom.Items.Add("кадка");
+                    cbRussianFrom.Items.Add("литр");
+                    cbRussianFrom.Items.Add("миллилитр");
+
+                    cbRussianTo.Items.Clear();
+                    cbRussianTo.Items.Add("полугарнец");
+                    cbRussianTo.Items.Add("четверка");
+                    cbRussianTo.Items.Add("получетверик");
+                    cbRussianTo.Items.Add("четверик");
+                    cbRussianTo.Items.Add("мера");
+                    cbRussianTo.Items.Add("полосьмины");
+                    cbRussianTo.Items.Add("осьмина");
+                    cbRussianTo.Items.Add("четь сыпучая");
+                    cbRussianTo.Items.Add("половник");
+                    cbRussianTo.Items.Add("кадка");
+                    cbRussianTo.Items.Add("литр");
+                    cbRussianTo.Items.Add("миллилитр");
+
+                    cbRussianFrom.Text = "литр";
+                    cbRussianTo.Text = "миллилитр";
+                    break;
+
+                #endregion
+
+                #region Площадь
+
+                case "Площадь":
+                    Russian_measure.Clear();
+                    Russian_measure.Add("квадратный сантиметр", sqCmeter);
+                    Russian_measure.Add("квадратный вершок", sqVershok);
+                    Russian_measure.Add("квадратный аршин", sqArshin);
+                    Russian_measure.Add("квадратная сажень", sqSagen);
+                    Russian_measure.Add("квадратный осьминник", osminnik);
+                    Russian_measure.Add("квадратная четь", chet);
+                    Russian_measure.Add("квадратная десятина", desyatina);
+                    Russian_measure.Add("квадратная верста", sqVersta);
+                    Russian_measure.Add("квадратный метр", sqMeter);
+
+                    cbRussianFrom.Items.Clear();
+                    cbRussianFrom.Items.Add("квадратный сантиметр");
+                    cbRussianFrom.Items.Add("квадратный вершок");
+                    cbRussianFrom.Items.Add("квадратный аршин");
+                    cbRussianFrom.Items.Add("квадратная сажень");
+                    cbRussianFrom.Items.Add("квадратный осьминник");
+                    cbRussianFrom.Items.Add("квадратная четь");
+                    cbRussianFrom.Items.Add("квадратная десятина");
+                    cbRussianFrom.Items.Add("квадратная верста");
+                    cbRussianFrom.Items.Add("квадратный метр");
+
+                    cbRussianTo.Items.Clear();
+                    cbRussianTo.Items.Add("квадратный сантиметр");
+                    cbRussianTo.Items.Add("квадратный вершок");
+                    cbRussianTo.Items.Add("квадратный аршин");
+                    cbRussianTo.Items.Add("квадратная сажень");
+                    cbRussianTo.Items.Add("квадратный осьминник");
+                    cbRussianTo.Items.Add("квадратная четь");
+                    cbRussianTo.Items.Add("квадратная десятина");
+                    cbRussianTo.Items.Add("квадратная верста");
+                    cbRussianTo.Items.Add("квадратный метр");
+
+                    cbRussianFrom.Text = "квадратный метр";
+                    cbRussianTo.Text = "квадратный сантиметр";
+                    break;
+
+                    #endregion
             }
         }
 
