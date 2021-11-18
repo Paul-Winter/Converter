@@ -117,4 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tbPrefix.Text" xml:space="preserve">
+    <value>10-24 иокто
+10-21 зепто
+10-18 атто
+10-15 фемто
+10-12 пико
+10-9   нано
+10-6   микро
+10-3   милли
+10-2   санти
+10-1   деци
+101    дека
+102    гекто
+103    кило
+106    мега
+109    гига
+1012  тера
+1015  пета
+1018  экса
+1021  зетта
+1024  иотта</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>
